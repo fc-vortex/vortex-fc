@@ -126,3 +126,33 @@ a {
 .site-section h5 {
   font-weight: 700;
 }
+/* ============================= */
+/* HERO BACKGROUND SIZE FIX */
+/* ============================= */
+
+/* Desktop & large screens */
+.hero {
+  min-height: 80vh;              /* Not too tall */
+  max-height: 90vh;              /* Prevents oversizing */
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+/* Large desktop screens (very wide monitors) */
+@media (min-width: 1400px) {
+  .hero {
+    min-height: 70vh;
+  }
+}
+
+/* Mobile (already optimized) */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    background-image: none !important;
+    background-color: #0b1120;
+  }
+}
