@@ -118,3 +118,11 @@ a {
   color: #777;
   font-size: 14px;
 }
+/* Future Plan Section */
+.site-section.bg-light {
+  background: #f8f9fa;
+}
+
+.site-section h5 {
+  font-weight: 700;
+}
