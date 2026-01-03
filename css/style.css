@@ -173,19 +173,3 @@ a {
   color: #ffffff !important;
   transform: translateY(-2px);
 }
-.btn-gallery {
-  display: inline-block;
-  padding: 12px 28px;
-  background: linear-gradient(135deg, #1f2937, #0f172a);
-  color: #38bdf8;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 25px;
-  transition: 0.3s;
-}
-
-.btn-gallery:hover {
-  background: linear-gradient(135deg, #0f172a, #1e3a8a);
-  color: #ffffff;
-  transform: translateY(-2px);
-}
