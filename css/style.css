@@ -156,3 +156,20 @@ a {
     background-color: #0b1120;
   }
 }
+/* Shop Jersey Button in Navbar */
+.shop-jersey-btn {
+  display: inline-block;
+  padding: 8px 18px;
+  background: linear-gradient(135deg, #1f2937, #0f172a);
+  color: #38bdf8 !important;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.shop-jersey-btn:hover {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
