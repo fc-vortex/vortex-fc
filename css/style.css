@@ -456,3 +456,22 @@ a {
 
 .news-card { transition: 0.3s ease; border: 1px solid rgba(255,255,255,0.1); }
 .news-card:hover { transform: translateY(-5px); border-color: #007bff; box-shadow: 0 10px 20px rgba(0,123,255,0.2); }
+/* --- MOBILE PLAYER CARD OPTIMIZATION --- */
+@media (max-width: 768px) {
+    .player-grid, .news-grid {
+        /* This forces the cards to be larger and stack better on mobile */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+        gap: 20px !important;
+        padding: 0 15px;
+    }
+
+    .player-card {
+        /* Optional: increase height on mobile if they feel squashed */
+        margin-bottom: 20px;
+    }
+
+    .player-card img {
+        height: 350px !important; /* Makes the player photo much taller and clearer */
+        object-fit: cover;
+    }
+}
