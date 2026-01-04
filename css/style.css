@@ -1,15 +1,16 @@
-/* --- VORTEX FC MASTER STYLESHEET (CLEAN & UPGRADED) --- */
+/* --- VORTEX FC MASTER STYLESHEET (MOBILE-OPTIMIZED) --- */
 
 /* ============================= */
-/* BASE */
+/* 1. BASE & RESET */
 /* ============================= */
 body {
   line-height: 1.7;
   color: #9ca3af;
   font-weight: 300;
-  background-color: #222831;
+  background-color: #020617; /* Dark Pro Pitch Base */
   font-size: 16px;
   margin: 0;
+  overflow-x: hidden; /* Prevents horizontal scrolling on mobile */
 }
 
 h1, h2, h3, h4, h5 {
@@ -17,19 +18,15 @@ h1, h2, h3, h4, h5 {
   color: #ffffff;
 }
 
-a {
-  transition: 0.3s all ease;
-  text-decoration: none;
-}
-
 /* ============================= */
-/* NAVBAR & LOGO */
+/* 2. NAVBAR & NAVIGATION */
 /* ============================= */
 .site-navbar {
   position: absolute;
   width: 100%;
   z-index: 1000;
   padding: 20px 0;
+  transition: 0.3s all ease;
 }
 
 .site-logo img {
@@ -38,20 +35,13 @@ a {
   display: block;
 }
 
-@media (max-width: 768px) {
-  .site-logo img {
-    height: 45px;
-  }
-}
-
 .site-menu {
   list-style: none;
   padding: 0;
-}
-
-.site-menu li {
-  display: block;
-  margin: 10px 0;
+  margin: 0;
+  display: flex; /* PC View: Horizontal */
+  gap: 30px;
+  align-items: center;
 }
 
 .site-menu a {
@@ -59,35 +49,43 @@ a {
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 0.1em;
-}
-
-/* Shop Jersey Button */
-.shop-jersey-btn {
-  display: inline-block;
-  padding: 8px 16px;
-  background: #ff3c00;
-  color: #ffffff !important;
   font-weight: 700;
-  border-radius: 8px;
   transition: 0.3s;
 }
 
+.site-menu a:hover {
+  color: #007bff;
+}
+
+/* Button Styling (PC & Mobile) */
+.shop-jersey-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #007bff 0%, #00d4ff 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+  transition: 0.3s;
+  border: none !important;
+}
+
 .shop-jersey-btn:hover {
-  background: #ff5722;
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6);
 }
 
 /* ============================= */
-/* HERO SECTION */
+/* 3. HERO SECTION (ULTRA-MODERN) */
 /* ============================= */
 .hero {
   background-image: url('../images/bg_3.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   position: relative;
-  min-height: 80vh;
-  max-height: 90vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
 }
@@ -96,7 +94,7 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(2, 6, 23, 0.7); /* Darker overlay for better text contrast */
   z-index: 1;
 }
 
@@ -106,372 +104,130 @@ a {
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 8vw, 5rem); /* Dynamically scales text size */
   font-weight: 900;
   text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    min-height: 65vh;
-    background-position: center top;
-  }
-
-  .hero h1 {
-    font-size: 2.4rem;
-  }
-}
-
-/* ============================= */
-/* SECTIONS */
-/* ============================= */
-.site-section {
-  padding: 60px 0;
-}
-
-.bg-dark {
-  background: #1a1e25 !important;
-}
-
-.site-section.bg-light {
-  background: #f8f9fa;
-}
-
-.site-section h5 {
-  font-weight: 700;
-}
-
-/* ============================= */
-/* FOOTER */
-/* ============================= */
-.footer-section {
-  padding: 50px 0;
-  background: #111;
-  color: #777;
-  font-size: 14px;
-
-}
-/* ============================= */
-/* CUSTOM PLAYER SECTION — DARK + NEON VIBE */
-/* ============================= */
-
-.players-section {
-  background: linear-gradient(180deg, #0b1120, #020617);
-  padding: 60px 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.players-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 20px),
-                    repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 20px);
-  z-index: 0;
-}
-
-.players-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 24px;
-  z-index: 1;
-  position: relative;
-}
-
-/* Player Card */
-.player-card {
-  background: linear-gradient(135deg, #111827, #020617);
-  border-radius: 20px;
-  padding: 20px 12px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  z-index: 1;
-}
-
-/* Neon glow & gradient overlay */
-.player-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, rgba(255, 60, 0, 0.2), transparent 70%);
-  transform: rotate(-25deg);
-  z-index: 0;
-  transition: all 0.5s ease;
-}
-
-.player-card::after {
-  content: "";
-  position: absolute;
-  inset: -10px;
-  background: radial-gradient(circle at center, rgba(255, 60, 0, 0.15), transparent 60%);
-  filter: blur(20px);
-  z-index: 0;
-  opacity: 0.7;
-  transition: opacity 0.4s ease;
-}
-
-.player-card:hover::after {
-  opacity: 1;
-}
-
-/* Hover effect */
-.player-card:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 20px 40px rgba(255, 60, 0, 0.5);
-}
-
-/* Player photo */
-.player-photo-wrap {
-  position: relative;
-  z-index: 1;
-}
-
-.player-photo {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #ff3c00;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.player-card:hover .player-photo {
-  transform: scale(1.1) rotate(3deg);
-  box-shadow: 0 0 25px rgba(255, 92, 0, 0.8);
-}
-
-/* Player name */
-.player-name {
-  position: relative;
-  z-index: 1;
-  font-size: 18px;
-  font-weight: 700;
-  color: #ffb347;
-  margin-top: 12px;
-  letter-spacing: 0.02em;
-  transition: all 0.3s ease;
-}
-
-.player-card:hover .player-name {
-  background: linear-gradient(45deg, #ff3c00, #ffb347);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Empty / Coming Soon Cards */
-.player-card.empty {
-  opacity: 0.6;
-}
-
-.player-card.empty .player-photo {
-  border-style: dashed;
-  border-color: #555;
-}
-
-.player-card.empty .player-name {
-  color: #999;
-  font-style: italic;
-}
-/* --- MOBILE OVERLAP FIX --- */
-@media (max-width: 768px) {
-  /* 1. Change from absolute to relative so it pushes the Hero down */
-  .site-navbar {
-    position: relative !important;
-    background: #111827 !important; /* Matches your theme color */
-    padding: 20px 0 !important;
-  }
-
-  /* 2. Fix the menu spacing */
-  .site-menu {
-    text-align: center;
-    padding-bottom: 20px;
-  }
-
-  .site-menu li {
-    margin: 15px 0; /* Gives each link more room */
-  }
-
-  /* 3. Adjust the Hero so it doesn't have too much empty space now */
-  .hero {
-    min-height: 50vh !important;
-    padding: 40px 0 !important;
-  }
-
-  /* 4. Center the Shop Jersey button on mobile */
-  .shop-jersey-btn {
-    display: inline-block !important;
-    margin-top: 10px;
-  }
-}
-/* ====================================================== */
-/* FINAL FIXES: MOBILE OVERLAP & BLUE THEME OVERRIDE      */
-/* ====================================================== */
-
-/* 1. THE MOBILE OVERLAP FIX */
-@media (max-width: 768px) {
-  .site-navbar {
-    position: relative !important;
-    background: #111827 !important;
-    padding: 15px 0 !important;
-  }
-  .hero {
-    min-height: auto !important;
-    padding: 80px 0 40px 0 !important;
-  }
-  .site-menu li {
-    margin: 10px 0;
-  }
-  .hero h1 {
-    font-size: 2.8rem !important;
-  }
-}
-
-/* 2. THE BLUE THEME (Replacing Orange/Gold) */
-.shop-jersey-btn, .btn-primary {
-  background: #007bff !important;
-  border-color: #007bff !important;
-  color: #ffffff !important;
-}
-
-.shop-jersey-btn:hover, .btn-primary:hover {
-  background: #0056b3 !important;
-}
-
-.player-name {
-  color: #ffffff !important;
-}
-
-.player-photo {
-  border-color: #007bff !important;
-}
-
-.player-card:hover {
-  box-shadow: 0 20px 40px rgba(0, 123, 255, 0.4) !important;
-}
-
-.player-card::after {
-  background: radial-gradient(circle at center, rgba(0, 123, 255, 0.15), transparent 60%) !important;
-}
-/* ====================================================== */
-/* VORTEX FC: "ELITE PRO" VISUAL OVERHAUL                 */
-/* ====================================================== */
-
-/* 1. THE MOBILE "SMART-GAP" FIX */
-@media (max-width: 768px) {
-  .site-navbar {
-    position: relative !important;
-    background: #020617 !important;
-    padding: 10px 0 !important;
-    border-bottom: 1px solid rgba(0, 123, 255, 0.2);
-  }
-  .hero {
-    min-height: 70vh !important;
-    padding-top: 60px !important;
-    display: flex;
-    align-items: center;
-  }
-  .hero h1 {
-    font-size: 3.5rem !important; /* Large, bold impact */
-    line-height: 1;
-  }
-}
-
-/* 2. THE "GLASS" NAVBAR & BUTTONS */
-.shop-jersey-btn {
-  background: linear-gradient(135deg, #007bff 0%, #00d4ff 100%) !important;
-  border: none !important;
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.shop-jersey-btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6);
-}
-
-/* 3. ULTRA-MODERN HERO TEXT (Gradient & Glow) */
-.hero h1 {
-  font-family: 'Montserrat', sans-serif;
   background: linear-gradient(to bottom, #ffffff 50%, #94a3b8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 10px 30px rgba(0, 123, 255, 0.3);
   letter-spacing: -2px;
+  line-height: 1;
 }
 
-/* 4. THE "PRO PITCH" TEXTURE (Grid + Radial Light) */
-.bg-dark, .players-section {
-  background-color: #020617 !important;
+/* ============================= */
+/* 4. PLAYER SECTION (NEON PULSE) */
+/* ============================= */
+.players-section {
+  padding: 80px 0;
+  background-color: #020617;
   background-image: 
     radial-gradient(circle at 50% 0%, rgba(0, 123, 255, 0.15), transparent 50%),
     linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px) !important;
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 100% 100%, 40px 40px, 40px 40px;
 }
 
-/* 5. PLAYER CARD "NEON PULSE" */
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
 .player-card {
+  background: rgba(15, 23, 42, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  background: rgba(15, 23, 42, 0.8) !important;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  border-radius: 20px;
+  padding: 30px 15px;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .player-card:hover {
   border-color: #007bff;
-  box-shadow: 0 0 30px rgba(0, 123, 255, 0.3) !important;
-  transform: translateY(-10px) rotateX(5deg) !important;
+  box-shadow: 0 0 30px rgba(0, 123, 255, 0.3);
+  transform: translateY(-10px);
 }
 
 .player-photo {
-  border: 3px solid #007bff !important;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #007bff;
   padding: 5px;
   background: rgba(0, 123, 255, 0.1);
+  margin-bottom: 15px;
 }
 
-/* 6. FEATURED MATCH "STADIUM BOARD" LOOK */
+.player-name {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* ============================= */
+/* 5. MOBILE OVERRIDES (THE "MAGIC") */
+/* ============================= */
+@media (max-width: 992px) {
+  /* Fix Navbar Overlap */
+  .site-navbar {
+    position: relative;
+    background: #020617;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 123, 255, 0.2);
+  }
+
+  .site-menu {
+    flex-direction: column; /* Stack menu items vertically */
+    text-align: center;
+    gap: 15px;
+    padding: 20px 0;
+  }
+
+  .site-logo img {
+    height: 45px;
+    margin: 0 auto; /* Center logo on mobile */
+  }
+
+  /* Hero Adjustments */
+  .hero {
+    min-height: 60vh;
+    text-align: center;
+  }
+
+  /* Grid Adjustments for Mobile */
+  .players-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Larger cards on small screens */
+    padding: 0 20px;
+  }
+
+  .player-photo {
+    width: 200px; /* Bigger photos for mobile visibility */
+    height: 200px;
+  }
+
+  /* Touch Optimization */
+  .shop-jersey-btn {
+    width: 100%; /* Full width buttons are easier to tap on mobile */
+    max-width: 300px;
+    padding: 18px;
+  }
+}
+
+/* ============================= */
+/* 6. UTILITIES (TICKER & MATCH) */
+/* ============================= */
+.news-ticker { background: #000a1a; border-bottom: 2px solid #007bff; display: flex; height: 40px; overflow: hidden; align-items: center; }
+.ticker-title { background: #007bff; color: white; padding: 0 15px; font-weight: bold; font-size: 11px; z-index: 2; }
+.ticker-text { display: inline-block; white-space: nowrap; animation: ticker-slide 20s linear infinite; }
+@keyframes ticker-slide { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
 .featured-match {
   background: rgba(255, 255, 255, 0.03);
   border-radius: 20px;
   padding: 40px;
   border: 1px dashed rgba(0, 123, 255, 0.3);
-}
-
-.score {
-  font-size: 4rem;
-  font-weight: 900;
-  color: #fff;
-  text-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
-}
-.news-ticker { background: #000a1a; border-bottom: 2px solid #007bff; display: flex; height: 40px; overflow: hidden; align-items: center; }
-.ticker-title { background: #007bff; color: white; padding: 0 15px; font-weight: bold; font-size: 11px; z-index: 2; }
-.ticker-text { display: inline-block; white-space: nowrap; animation: ticker-slide 20s linear infinite; }
-.ticker-text span { color: white; margin-right: 100px; font-size: 13px; }
-@keyframes ticker-slide { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-
-.news-card { transition: 0.3s ease; border: 1px solid rgba(255,255,255,0.1); }
-.news-card:hover { transform: translateY(-5px); border-color: #007bff; box-shadow: 0 10px 20px rgba(0,123,255,0.2); }
-/* --- MOBILE PLAYER CARD OPTIMIZATION --- */
-@media (max-width: 768px) {
-    .player-grid, .news-grid {
-        /* This forces the cards to be larger and stack better on mobile */
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-        gap: 20px !important;
-        padding: 0 15px;
-    }
-
-    .player-card {
-        /* Optional: increase height on mobile if they feel squashed */
-        margin-bottom: 20px;
-    }
-
-    .player-card img {
-        height: 350px !important; /* Makes the player photo much taller and clearer */
-        object-fit: cover;
-    }
+  text-align: center;
 }
