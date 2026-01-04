@@ -36,6 +36,54 @@
         <span class="player-pos">Defender</span>
       </div>
 
+      <div class="player-card">
+        <div class="player-photo-wrap">
+          <img src="images/person_4.png" alt="Ashraful" class="player-photo">
+        </div>
+        <h4 class="player-name">Ashraful</h4>
+        <span class="player-pos">Defender</span>
+      </div>
+
+      <div class="player-card">
+        <div class="player-photo-wrap">
+          <img src="images/person_5.png" alt="Enzai" class="player-photo">
+        </div>
+        <h4 class="player-name">Enzai</h4>
+        <span class="player-pos">Midfielder</span>
+      </div>
+
+      <div class="player-card">
+        <div class="player-photo-wrap">
+          <img src="images/person_6.png" alt="Joynul" class="player-photo">
+        </div>
+        <h4 class="player-name">Joynul</h4>
+        <span class="player-pos">Forward</span>
+      </div>
+
+      <div class="player-card">
+        <div class="player-photo-wrap">
+          <img src="images/person_7.png" alt="Ibtisam" class="player-photo">
+        </div>
+        <h4 class="player-name">Ibtisam</h4>
+        <span class="player-pos">Defender</span>
+      </div>
+
+      <div class="player-card">
+        <div class="player-photo-wrap">
+          <img src="images/person_8.png" alt="Nawab" class="player-photo">
+        </div>
+        <h4 class="player-name">Nawab</h4>
+        <span class="player-pos">Midfielder</span>
+      </div>
+
+      <div class="player-card">
+        <div class="player-photo-wrap">
+          <img src="images/person_9.png" alt="Hadi" class="player-photo">
+        </div>
+        <h4 class="player-name">Hadi</h4>
+        <span class="player-pos">Goalkeeper</span>
+      </div>
+
       <div class="player-card empty">
         <div class="player-photo-wrap">
           <div class="empty-photo-placeholder">
@@ -51,10 +99,17 @@
 </section>
 
 <style>
+/* Fix the white background on the whole page */
+body {
+    background-color: #000a1a !important;
+    margin: 0;
+}
+
 .players-section {
-    background: #000a1a; /* Darkest Navy */
+    background: #000a1a;
     padding: 100px 0;
     color: #fff;
+    min-height: 100vh; /* Ensures the dark background fills the screen */
 }
 
 .header-line {
@@ -67,6 +122,7 @@
 
 .players-grid {
     display: grid;
+    /* This automatically creates as many rows as needed */
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
     margin-top: 50px;
@@ -78,14 +134,14 @@
     border-radius: 20px;
     padding: 30px 20px;
     text-align: center;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.4s ease;
 }
 
 .player-card:hover {
     transform: translateY(-12px);
-    background: rgba(0, 123, 255, 0.08);
+    background: rgba(0, 123, 255, 0.1);
     border-color: #007bff;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 123, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 .player-photo-wrap {
@@ -101,7 +157,6 @@
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid #007bff;
-    padding: 5px;
 }
 
 .player-badge {
@@ -114,25 +169,23 @@
     font-weight: bold;
     padding: 4px 8px;
     border-radius: 10px;
-    text-transform: uppercase;
 }
 
 .player-name {
     font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: 5px;
     color: #fff;
 }
 
 .player-pos {
     color: #007bff;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .player-card.empty {
-    opacity: 0.6;
+    opacity: 0.5;
     border-style: dashed;
 }
 
@@ -144,11 +197,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px dashed #444;
-}
-
-.plus-icon {
-    font-size: 40px;
-    color: #444;
 }
 </style>
