@@ -173,3 +173,16 @@ a {
   color: #ffffff !important;
   transform: translateY(-2px);
 }
+/* Mobile navbar fix */
+.site-menu li {
+  display: block;
+  margin: 10px 0;
+}
+
+.shop-jersey-btn {
+  background: #ff3c00;
+  color: #fff !important;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+}
