@@ -356,3 +356,95 @@ a {
 .player-card::after {
   background: radial-gradient(circle at center, rgba(0, 123, 255, 0.15), transparent 60%) !important;
 }
+/* ====================================================== */
+/* VORTEX FC: "ELITE PRO" VISUAL OVERHAUL                 */
+/* ====================================================== */
+
+/* 1. THE MOBILE "SMART-GAP" FIX */
+@media (max-width: 768px) {
+  .site-navbar {
+    position: relative !important;
+    background: #020617 !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid rgba(0, 123, 255, 0.2);
+  }
+  .hero {
+    min-height: 70vh !important;
+    padding-top: 60px !important;
+    display: flex;
+    align-items: center;
+  }
+  .hero h1 {
+    font-size: 3.5rem !important; /* Large, bold impact */
+    line-height: 1;
+  }
+}
+
+/* 2. THE "GLASS" NAVBAR & BUTTONS */
+.shop-jersey-btn {
+  background: linear-gradient(135deg, #007bff 0%, #00d4ff 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.shop-jersey-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6);
+}
+
+/* 3. ULTRA-MODERN HERO TEXT (Gradient & Glow) */
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to bottom, #ffffff 50%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 30px rgba(0, 123, 255, 0.3);
+  letter-spacing: -2px;
+}
+
+/* 4. THE "PRO PITCH" TEXTURE (Grid + Radial Light) */
+.bg-dark, .players-section {
+  background-color: #020617 !important;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(0, 123, 255, 0.15), transparent 50%),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px) !important;
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+}
+
+/* 5. PLAYER CARD "NEON PULSE" */
+.player-card {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.8) !important;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
+}
+
+.player-card:hover {
+  border-color: #007bff;
+  box-shadow: 0 0 30px rgba(0, 123, 255, 0.3) !important;
+  transform: translateY(-10px) rotateX(5deg) !important;
+}
+
+.player-photo {
+  border: 3px solid #007bff !important;
+  padding: 5px;
+  background: rgba(0, 123, 255, 0.1);
+}
+
+/* 6. FEATURED MATCH "STADIUM BOARD" LOOK */
+.featured-match {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px dashed rgba(0, 123, 255, 0.3);
+}
+
+.score {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
+}
