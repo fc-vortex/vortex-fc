@@ -276,3 +276,34 @@ a {
   color: #999;
   font-style: italic;
 }
+/* --- MOBILE OVERLAP FIX --- */
+@media (max-width: 768px) {
+  /* 1. Change from absolute to relative so it pushes the Hero down */
+  .site-navbar {
+    position: relative !important;
+    background: #111827 !important; /* Matches your theme color */
+    padding: 20px 0 !important;
+  }
+
+  /* 2. Fix the menu spacing */
+  .site-menu {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .site-menu li {
+    margin: 15px 0; /* Gives each link more room */
+  }
+
+  /* 3. Adjust the Hero so it doesn't have too much empty space now */
+  .hero {
+    min-height: 50vh !important;
+    padding: 40px 0 !important;
+  }
+
+  /* 4. Center the Shop Jersey button on mobile */
+  .shop-jersey-btn {
+    display: inline-block !important;
+    margin-top: 10px;
+  }
+}
