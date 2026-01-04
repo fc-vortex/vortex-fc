@@ -1,565 +1,178 @@
-/* --- VORTEX FC MASTER STYLESHEET (MOBILE-OPTIMIZED) --- */
-
-
+/* --- VORTEX FC MASTER STYLESHEET --- */
 
 /* ============================= */
-
 /* 1. BASE & RESET */
-
 /* ============================= */
-
 body {
-
   line-height: 1.7;
-
   color: #9ca3af;
-
   font-weight: 300;
-
-  background-color: #020617; /* Dark Pro Pitch Base */
-
+  background-color: #020617;
   font-size: 16px;
-
   margin: 0;
-
-  overflow-x: hidden; /* Prevents horizontal scrolling on mobile */
-
+  overflow-x: hidden;
 }
-
-
 
 h1, h2, h3, h4, h5 {
-
   font-family: "Montserrat", sans-serif;
-
   color: #ffffff;
-
 }
 
-
-
 /* ============================= */
-
-/* 2. NAVBAR & NAVIGATION */
-
+/* 2. NAVBAR & SIDEBAR (UNIVERSAL) */
 /* ============================= */
-
 .site-navbar {
-
   position: absolute;
-
   width: 100%;
-
   z-index: 1000;
-
   padding: 20px 0;
-
-  transition: 0.3s all ease;
-
 }
 
-
-
-.site-logo img {
-
-  height: 60px;
-
-  width: auto;
-
-  display: block;
-
+/* Sidebar Styling - Works on PC and Mobile */
+.navbar-collapse {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Hidden off-screen */
+  width: 300px;
+  height: 100vh;
+  background: #020617;
+  padding: 80px 20px;
+  transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 9999;
+  display: block !important; 
+  border-left: 1px solid rgba(0, 123, 255, 0.2);
 }
 
-
+.navbar-collapse.show {
+  right: 0; /* Slides in */
+  box-shadow: -15px 0 30px rgba(0, 0, 0, 0.8);
+}
 
 .site-menu {
-
   list-style: none;
-
   padding: 0;
-
   margin: 0;
-
-  display: flex; /* PC View: Horizontal */
-
-  gap: 30px;
-
-  align-items: center;
-
+  display: block;
 }
 
-
+.site-menu li {
+  display: block;
+  margin-bottom: 25px;
+}
 
 .site-menu a {
-
   color: #ffffff;
-
   text-transform: uppercase;
-
-  font-size: 13px;
-
+  font-size: 18px;
   letter-spacing: 0.1em;
-
   font-weight: 700;
-
   transition: 0.3s;
-
 }
-
-
 
 .site-menu a:hover {
-
   color: #007bff;
-
 }
 
-
-
-/* Button Styling (PC & Mobile) */
-
-.shop-jersey-btn {
-
-  display: inline-block;
-
-  padding: 12px 24px;
-
-  background: linear-gradient(135deg, #007bff 0%, #00d4ff 100%) !important;
-
-  color: #ffffff !important;
-
-  font-weight: 700;
-
-  border-radius: 8px;
-
-  text-transform: uppercase;
-
-  letter-spacing: 1px;
-
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
-
-  transition: 0.3s;
-
-  border: none !important;
-
+/* Close Button in Sidebar */
+#menu-close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: #fff;
+  font-size: 35px;
+  text-decoration: none;
+  cursor: pointer;
 }
-
-
-
-.shop-jersey-btn:hover {
-
-  transform: translateY(-3px) scale(1.05);
-
-  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6);
-
-}
-
-
 
 /* ============================= */
-
-/* 3. HERO SECTION (ULTRA-MODERN) */
-
+/* 3. HERO SECTION */
 /* ============================= */
-
 .hero {
-
   background-image: url('../images/bg_3.jpg');
-
   background-size: cover;
-
   background-position: center;
-
   position: relative;
-
   min-height: 85vh;
-
   display: flex;
-
   align-items: center;
-
 }
-
-
 
 .hero.overlay::before {
-
   content: "";
-
   position: absolute;
-
   inset: 0;
-
-  background: rgba(2, 6, 23, 0.7); /* Darker overlay for better text contrast */
-
+  background: rgba(2, 6, 23, 0.7);
   z-index: 1;
-
 }
-
-
 
 .hero .container {
-
   position: relative;
-
   z-index: 2;
-
 }
-
-
 
 .hero h1 {
-
-  font-size: clamp(2.5rem, 8vw, 5rem); /* Dynamically scales text size */
-
+  font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: 900;
-
   text-transform: uppercase;
-
   background: linear-gradient(to bottom, #ffffff 50%, #94a3b8 100%);
-
   -webkit-background-clip: text;
-
   -webkit-text-fill-color: transparent;
-
   text-shadow: 0 10px 30px rgba(0, 123, 255, 0.3);
-
   letter-spacing: -2px;
-
   line-height: 1;
-
 }
 
-
-
 /* ============================= */
-
-/* 4. PLAYER SECTION (NEON PULSE) */
-
+/* 4. PLAYERS & CARDS */
 /* ============================= */
-
 .players-section {
-
   padding: 80px 0;
-
   background-color: #020617;
-
-  background-image: 
-
-    radial-gradient(circle at 50% 0%, rgba(0, 123, 255, 0.15), transparent 50%),
-
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-
-  background-size: 100% 100%, 40px 40px, 40px 40px;
-
 }
-
-
 
 .players-grid {
-
   display: grid;
-
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-
   gap: 30px;
-
 }
-
-
 
 .player-card {
-
   background: rgba(15, 23, 42, 0.8);
-
   border: 1px solid rgba(255, 255, 255, 0.05);
-
   backdrop-filter: blur(10px);
-
   border-radius: 20px;
-
   padding: 30px 15px;
-
   text-align: center;
-
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-
+  transition: all 0.5s;
 }
-
-
 
 .player-card:hover {
-
   border-color: #007bff;
-
   box-shadow: 0 0 30px rgba(0, 123, 255, 0.3);
-
   transform: translateY(-10px);
-
 }
-
-
 
 .player-photo {
-
   width: 160px;
-
   height: 160px;
-
   object-fit: cover;
-
   border-radius: 50%;
-
   border: 3px solid #007bff;
-
-  padding: 5px;
-
-  background: rgba(0, 123, 255, 0.1);
-
   margin-bottom: 15px;
-
 }
 
-
-
-.player-name {
-
-  color: #ffffff;
-
-  font-size: 20px;
-
+/* ============================= */
+/* 5. COMPONENTS & BUTTONS */
+/* ============================= */
+.shop-jersey-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #007bff 0%, #00d4ff 100%) !important;
+  color: #ffffff !important;
   font-weight: 700;
-
+  border-radius: 8px;
+  text-transform: uppercase;
+  border: none !important;
 }
 
-
-
-/* ============================= */
-
-/* 5. MOBILE OVERRIDES (THE "MAGIC") */
-
-/* ============================= */
-
-@media (max-width: 992px) {
-
-  /* Fix Navbar Overlap */
-
-  .site-navbar {
-
-    position: relative;
-
-    background: #020617;
-
-    padding: 15px 0;
-
-    border-bottom: 1px solid rgba(0, 123, 255, 0.2);
-
-  }
-
-
-
-  .site-menu {
-
-    flex-direction: column; /* Stack menu items vertically */
-
-    text-align: center;
-
-    gap: 15px;
-
-    padding: 20px 0;
-
-  }
-
-
-
-  .site-logo img {
-
-    height: 45px;
-
-    margin: 0 auto; /* Center logo on mobile */
-
-  }
-
-
-
-  /* Hero Adjustments */
-
-  .hero {
-
-    min-height: 60vh;
-
-    text-align: center;
-
-  }
-
-
-
-  /* Grid Adjustments for Mobile */
-
-  .players-grid {
-
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Larger cards on small screens */
-
-    padding: 0 20px;
-
-  }
-
-
-
-  .player-photo {
-
-    width: 200px; /* Bigger photos for mobile visibility */
-
-    height: 200px;
-
-  }
-
-
-
-  /* Touch Optimization */
-
-  .shop-jersey-btn {
-
-    width: 100%; /* Full width buttons are easier to tap on mobile */
-
-    max-width: 300px;
-
-    padding: 18px;
-
-  }
-
-}
-
-
-
-/* ============================= */
-
-/* 6. UTILITIES (TICKER & MATCH) */
-
-/* ============================= */
-
-.news-ticker { background: #000a1a; border-bottom: 2px solid #007bff; display: flex; height: 40px; overflow: hidden; align-items: center; }
-
-.ticker-title { background: #007bff; color: white; padding: 0 15px; font-weight: bold; font-size: 11px; z-index: 2; }
-
-.ticker-text { display: inline-block; white-space: nowrap; animation: ticker-slide 20s linear infinite; }
-
-@keyframes ticker-slide { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-
-
-
-.featured-match {
-
-  background: rgba(255, 255, 255, 0.03);
-
-  border-radius: 20px;
-
-  padding: 40px;
-
-  border: 1px dashed rgba(0, 123, 255, 0.3);
-
-  text-align: center;
-
-}
-
-/* --- VORTEX FC MOBILE FIX (PASTE AT BOTTOM OF CSS FILE) --- */
-
-@media (max-width: 768px) {
-
-  
-
-  /* 1. Force the 2-column layout */
-
-  .players-grid {
-
-    display: grid !important;
-
-    grid-template-columns: repeat(2, 1fr) !important; /* Forces 2 columns */
-
-    gap: 12px !important; /* Space between cards */
-
-    padding: 0 15px !important; /* Padding on the edges of the screen */
-
-  }
-
-
-
-  /* 2. Make the cards look better with more space */
-
-  .player-card {
-
-    padding: 20px 10px !important;
-
-    min-height: 220px; /* Gives them a uniform height */
-
-  }
-
-
-
-  /* 3. Scale the photos so they aren't tiny */
-
-  .player-photo {
-
-    width: 100px !important; /* Larger photos */
-
-    height: 100px !important;
-
-    margin-bottom: 10px !important;
-
-  }
-
-
-
-  /* 4. Fix font sizes for 2-column view */
-
-  .player-name {
-
-    font-size: 16px !important;
-
-    margin-bottom: 5px !important;
-
-  }
-
-
-
-  .player-card span { /* This targets the position text like 'FORWARD' */
-
-    font-size: 10px !important;
-
-    letter-spacing: 1px;
-
-  }
-
-}
-/* Mobile Menu Styling */
-@media (max-width: 991.98px) {
-  .navbar-collapse {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Hide off-screen */
-    width: 280px;
-    height: 100vh;
-    background: #111; /* Dark background for sidebar */
-    padding: 80px 20px;
-    transition: 0.3s ease-in-out;
-    z-index: 9999;
-    display: block !important; /* Overwrite bootstrap hidden */
-  }
-
-  .navbar-collapse.show {
-    right: 0; /* Slide in */
-    box-shadow: -10px 0 20px rgba(0,0,0,0.5);
-  }
-
-  .site-menu li {
-    display: block;
-    margin-bottom: 20px;
-  }
-  
-  .site-menu li a {
-    font-size: 20px;
-    color: #fff;
-  }
-}
+.
