@@ -448,3 +448,11 @@ a {
   color: #fff;
   text-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
 }
+.news-ticker { background: #000a1a; border-bottom: 2px solid #007bff; display: flex; height: 40px; overflow: hidden; align-items: center; }
+.ticker-title { background: #007bff; color: white; padding: 0 15px; font-weight: bold; font-size: 11px; z-index: 2; }
+.ticker-text { display: inline-block; white-space: nowrap; animation: ticker-slide 20s linear infinite; }
+.ticker-text span { color: white; margin-right: 100px; font-size: 13px; }
+@keyframes ticker-slide { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+.news-card { transition: 0.3s ease; border: 1px solid rgba(255,255,255,0.1); }
+.news-card:hover { transform: translateY(-5px); border-color: #007bff; box-shadow: 0 10px 20px rgba(0,123,255,0.2); }
