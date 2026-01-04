@@ -533,3 +533,33 @@ h1, h2, h3, h4, h5 {
   }
 
 }
+/* Mobile Menu Styling */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hide off-screen */
+    width: 280px;
+    height: 100vh;
+    background: #111; /* Dark background for sidebar */
+    padding: 80px 20px;
+    transition: 0.3s ease-in-out;
+    z-index: 9999;
+    display: block !important; /* Overwrite bootstrap hidden */
+  }
+
+  .navbar-collapse.show {
+    right: 0; /* Slide in */
+    box-shadow: -10px 0 20px rgba(0,0,0,0.5);
+  }
+
+  .site-menu li {
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  .site-menu li a {
+    font-size: 20px;
+    color: #fff;
+  }
+}
