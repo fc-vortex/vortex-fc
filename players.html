@@ -1,14 +1,23 @@
-<section class="players-section site-section">
+<section class="players-section">
   <div class="container">
-    <h2 class="text-center mb-5">Vortex FC Squad</h2>
+    
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h2 class="display-4 text-white font-weight-bold">VORTEX FC SQUAD</h2>
+        <p class="text-primary text-uppercase letter-spacing-2">The Pride of Dhaka</p>
+        <div class="header-line mx-auto"></div>
+      </div>
+    </div>
 
     <div class="players-grid">
-      <!-- Players -->
+      
       <div class="player-card">
         <div class="player-photo-wrap">
           <img src="images/person_1.png" alt="S. Chowdhury" class="player-photo">
+          <div class="player-badge">CPT</div>
         </div>
         <h4 class="player-name">S. Chowdhury</h4>
+        <span class="player-pos">Forward</span>
       </div>
 
       <div class="player-card">
@@ -16,6 +25,7 @@
           <img src="images/person_2.png" alt="Rafio" class="player-photo">
         </div>
         <h4 class="player-name">Rafio</h4>
+        <span class="player-pos">Midfielder</span>
       </div>
 
       <div class="player-card">
@@ -23,78 +33,122 @@
           <img src="images/person_3.png" alt="Zarif" class="player-photo">
         </div>
         <h4 class="player-name">Zarif</h4>
-      </div>
-
-      <div class="player-card">
-        <div class="player-photo-wrap">
-          <img src="images/person_4.png" alt="Ashraful" class="player-photo">
-        </div>
-        <h4 class="player-name">Ashraful</h4>
-      </div>
-
-      <div class="player-card">
-        <div class="player-photo-wrap">
-          <img src="images/person_5.png" alt="Enzai" class="player-photo">
-        </div>
-        <h4 class="player-name">Enzai</h4>
-      </div>
-
-      <div class="player-card">
-        <div class="player-photo-wrap">
-          <img src="images/person_6.png" alt="Joynul" class="player-photo">
-        </div>
-        <h4 class="player-name">Joynul</h4>
-      </div>
-
-      <div class="player-card">
-        <div class="player-photo-wrap">
-          <img src="images/person_7.png" alt="Ibtisam" class="player-photo">
-        </div>
-        <h4 class="player-name">Ibtisam</h4>
-      </div>
-
-      <div class="player-card">
-        <div class="player-photo-wrap">
-          <img src="images/person_8.png" alt="Nawab" class="player-photo">
-        </div>
-        <h4 class="player-name">Nawab</h4>
-      </div>
-
-      <div class="player-card">
-        <div class="player-photo-wrap">
-          <img src="images/person_9.png" alt="Hadi" class="player-photo">
-        </div>
-        <h4 class="player-name">Hadi</h4>
-      </div>
-
-      <!-- 4 blank slots -->
-      <div class="player-card empty">
-        <div class="player-photo-wrap">
-          <img src="images/person_blank.png" alt="Coming Soon" class="player-photo">
-        </div>
-        <h4 class="player-name">Coming Soon</h4>
+        <span class="player-pos">Defender</span>
       </div>
 
       <div class="player-card empty">
         <div class="player-photo-wrap">
-          <img src="images/person_blank.png" alt="Coming Soon" class="player-photo">
+          <div class="empty-photo-placeholder">
+            <span class="plus-icon">+</span>
+          </div>
         </div>
         <h4 class="player-name">Coming Soon</h4>
+        <span class="player-pos">Join the Vortex</span>
       </div>
 
-      <div class="player-card empty">
-        <div class="player-photo-wrap">
-          <img src="images/person_blank.png" alt="Coming Soon" class="player-photo">
-        </div>
-        <h4 class="player-name">Coming Soon</h4>
-      </div>
-
-      <div class="player-card empty">
-        <div class="player-photo-wrap">
-          <img src="images/person_blank.png" alt="Coming Soon" class="player-photo">
-        </div>
-        <h4 class="player-name">Coming Soon</h4>
-      </div>
     </div>
   </div>
 </section>
+
+<style>
+.players-section {
+    background: #000a1a; /* Darkest Navy */
+    padding: 100px 0;
+    color: #fff;
+}
+
+.header-line {
+    width: 80px;
+    height: 4px;
+    background: #007bff;
+    margin-top: 15px;
+    border-radius: 2px;
+}
+
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.player-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.player-card:hover {
+    transform: translateY(-12px);
+    background: rgba(0, 123, 255, 0.08);
+    border-color: #007bff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 123, 255, 0.2);
+}
+
+.player-photo-wrap {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+}
+
+.player-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    padding: 5px;
+}
+
+.player-badge {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: #007bff;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+.player-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.player-pos {
+    color: #007bff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.player-card.empty {
+    opacity: 0.6;
+    border-style: dashed;
+}
+
+.empty-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px dashed #444;
+}
+
+.plus-icon {
+    font-size: 40px;
+    color: #444;
+}
+</style>
