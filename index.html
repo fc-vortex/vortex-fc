@@ -9,113 +9,43 @@
   <link rel="stylesheet" href="fonts/icomoon/style.css">
   <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
-
-  <style>
-    /* HAMBURGER MENU - ALL DEVICES */
-    .site-navigation {
-      position: fixed;
-      right: -100%; /* Hidden off-screen */
-      top: 0;
-      width: 300px;
-      height: 100vh;
-      background: #000;
-      padding-top: 80px;
-      transition: 0.4s all ease-in-out;
-      z-index: 9999;
-      box-shadow: -10px 0 20px rgba(0,0,0,0.5);
-    }
-    
-    .site-navigation.active {
-      right: 0; /* Slide in when clicked */
-    }
-
-    .site-menu {
-      display: block !important;
-      padding: 20px;
-      list-style: none;
-    }
-
-    .site-menu li {
-      display: block;
-      margin-bottom: 25px;
-      text-align: left;
-    }
-
-    .site-menu li a {
-      font-size: 20px;
-      color: #fff;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .close-menu {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      color: #fff;
-      font-size: 35px;
-      cursor: pointer;
-    }
-
-    .js-menu-toggle {
-      cursor: pointer;
-      display: inline-block;
-    }
-
-    .shop-jersey-btn {
-      background: linear-gradient(90deg, #007bff, #00d4ff);
-      border: none;
-      padding: 10px 25px !important;
-      border-radius: 5px;
-      color: white !important;
-      display: inline-block;
-      font-size: 16px !important;
-    }
-
-    /* Keep hero section clear */
-    .hero {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-    }
-  </style>
 </head>
 
 <body>
 <div class="site-wrap">
 
-<header class="site-navbar py-4" role="banner">
+<header class="site-navbar" role="banner">
   <div class="container">
     <div class="d-flex align-items-center justify-content-end">
       
-      <div class="ml-auto">
-        <a href="#" class="js-menu-toggle text-white d-flex align-items-center">
-          <span class="mr-3 font-weight-bold d-none d-md-inline-block">MENU</span>
-          <span class="icon-menu h3 m-0"></span>
-        </a>
-      </div>
+      <a href="#" class="text-white" id="menu-toggle">
+        <span class="icon-menu h3"></span>
+      </a>
 
-      <nav class="site-navigation" id="mobile-menu">
-        <span class="close-menu js-menu-toggle">&times;</span>
-        <ul class="site-menu list-unstyled">
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="matches.html">Matches</a></li>
-          <li><a href="players.html">Players</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="jersey.html" class="shop-jersey-btn">Shop Jersey</a></li>
-        </ul>
-      </nav>
+      <div class="navbar-collapse" id="mobileMenu">
+        <a href="#" class="text-white" id="menu-close">&times;</a>
+        
+        <nav class="site-navigation">
+          <ul class="site-menu list-unstyled">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="matches.html">Matches</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="jersey.html" class="shop-jersey-btn">Shop Jersey</a></li>
+          </ul>
+        </nav>
+      </div>
 
     </div>
   </div>
 </header>
 
-<div class="hero overlay" style="background-image:url('images/bg_3.jpg');">
+<div class="hero overlay">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-lg-6 ml-auto text-white">
-        <h1 class="mb-3 font-weight-bold display-4">VORTEX FC</h1>
+      <div class="col-lg-7 text-white">
+        <h1 class="mb-3">VORTEX FC</h1>
         <p class="lead">Strength through unity. <br>Relentless on the pitch. Fearless as one.</p>
         <p class="mt-4">
           <a href="matches.html" class="btn btn-primary py-3 px-4 mr-3">View Matches</a>
@@ -136,6 +66,7 @@
 <div class="site-section bg-dark text-white">
   <div class="container text-center">
     <h2 class="mb-4">Future Plans</h2>
+    <p class="mb-4">Vortex FC is focused on steady growth, discipline, and long-term development. Our vision goes beyond matches — we aim to build a strong football culture.</p>
     <div class="row">
       <div class="col-md-4 mb-4">
         <h5>⚽ Player Development</h5>
@@ -153,6 +84,44 @@
   </div>
 </div>
 
+<div class="site-section bg-light">
+  <div class="container text-center">
+    <h2>Latest Match</h2>
+    <p><strong>Vortex FC vs Thunder FC</strong></p>
+    <div class="h2 font-weight-bold text-primary mb-3">13 - 9</div>
+    <p>Man of the Match: <strong>Enzai</strong></p>
+  </div>
+</div>
+
+<div class="site-section bg-dark text-white">
+  <div class="container text-center">
+    <h2 class="mb-4">Our Values</h2>
+    <p>⚽ Teamwork & Unity | 🔥 Passion for the Game</p>
+    <p>🏆 Discipline & Growth | 🤝 Respect On & Off the Pitch</p>
+  </div>
+</div>
+
+<div class="site-section">
+  <div class="container text-center">
+    <h2 class="mb-4">Youth & Women’s Development</h2>
+    <p class="mb-5">Vortex FC is committed to building football from the ground up.</p>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h4>👧 Women’s Team</h4>
+        <p>We are actively working towards forming a dedicated women’s team.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h4>🧒 Youth Academies</h4>
+        <p>Age-group teams designed to develop skills and discipline.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h4>📈 Age Categories</h4>
+        <p>Structured teams including U-16, U-18, and senior squads.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <footer class="footer-section bg-dark text-white">
   <div class="container text-center py-4">
     <p class="mb-1">© <script>document.write(new Date().getFullYear());</script> Vortex FC</p>
@@ -164,22 +133,27 @@
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
 <script>
   $(document).ready(function() {
-    // Toggles the 'active' class to slide menu in/out
-    $('.js-menu-toggle').on('click', function(e) {
+    // Open Menu
+    $('#menu-toggle').on('click', function(e) {
       e.preventDefault();
-      $('.site-navigation').toggleClass('active');
+      $('#mobileMenu').addClass('show');
     });
 
-    // Close menu if user clicks outside of it
-    $(document).mouseup(function(e) {
-        var container = $(".site-navigation");
-        if (!container.is(e.target) && container.has(e.target).length === 0) {
-            container.removeClass('active');
-        }
+    // Close Menu
+    $('#menu-close').on('click', function(e) {
+      e.preventDefault();
+      $('#mobileMenu').removeClass('show');
+    });
+
+    // Close menu when clicking a link
+    $('.site-menu a').on('click', function() {
+      $('#mobileMenu').removeClass('show');
     });
   });
 </script>
+
 </body>
 </html>
