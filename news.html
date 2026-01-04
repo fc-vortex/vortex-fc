@@ -109,5 +109,25 @@
   </footer>
 
 </div>
+  <script>
+  $(document).ready(function() {
+    // Open the Menu
+    $('#menu-toggle').on('click', function(e) {
+      e.preventDefault();
+      $('#mobileMenu').addClass('show');
+    });
+
+    // Close the Menu
+    $('#menu-close').on('click', function(e) {
+      e.preventDefault();
+      $('#mobileMenu').removeClass('show');
+    });
+
+    // Close menu automatically when a link is clicked
+    $('.site-menu a').on('click', function() {
+      $('#mobileMenu').removeClass('show');
+    });
+  });
+</script>
 </body>
 </html>
