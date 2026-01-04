@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <div class="d-flex align-items-center justify-content-end">
-  <a href="#" id="menu-toggle" class="text-white">
-    <span class="icon-menu h3"></span>
-  </a>
-</div>
 <head>
   <title>Vortex FC — Official Website</title>
   <meta charset="utf-8">
@@ -49,13 +44,14 @@
 <div class="hero overlay">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-lg-7 text-white">
+      <div class="col-lg-6 ml-auto text-white text-lg-right text-center">
         <h1 class="mb-3">VORTEX FC</h1>
         <p class="lead">Strength through unity. <br>Relentless on the pitch. Fearless as one.</p>
-        <p class="mt-4">
-          <a href="matches.html" class="btn btn-primary py-3 px-4 mr-3">View Matches</a>
-          <a href="players.html" class="more light">Meet the Squad</a>
-        </p>
+        
+        <div class="mt-4 d-flex flex-wrap justify-content-lg-end justify-content-center">
+          <a href="players.html" class="more light py-3 px-4 mb-2 mr-lg-3">Meet the Squad</a>
+          <a href="matches.html" class="btn btn-primary py-3 px-4 mb-2">View Matches</a>
+        </div>
       </div>
     </div>
   </div>
@@ -141,19 +137,16 @@
 
 <script>
   $(document).ready(function() {
-    // Open Menu
     $('#menu-toggle').on('click', function(e) {
       e.preventDefault();
       $('#mobileMenu').addClass('show');
     });
 
-    // Close Menu
     $('#menu-close').on('click', function(e) {
       e.preventDefault();
       $('#mobileMenu').removeClass('show');
     });
 
-    // Close menu when clicking a link
     $('.site-menu a').on('click', function() {
       $('#mobileMenu').removeClass('show');
     });
