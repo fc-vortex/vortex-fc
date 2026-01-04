@@ -231,3 +231,52 @@ h1, h2, h3, h4, h5 {
   border: 1px dashed rgba(0, 123, 255, 0.3);
   text-align: center;
 }
+/* ============================= */
+/* 5. MOBILE OVERRIDES (2-COLUMN GRID) */
+/* ============================= */
+@media (max-width: 768px) {
+  /* Navbar Adjustment */
+  .site-navbar {
+    position: relative;
+    background: #020617;
+    padding: 10px 0;
+  }
+
+  /* 2-Column Player Grid */
+  .players-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* Forces 2 columns side-by-side */
+    gap: 12px !important; /* Reduced gap to save space */
+    padding: 0 10px;
+  }
+
+  .player-card {
+    padding: 15px 5px !important; /* Slimmer padding inside cards */
+    border-radius: 12px;
+  }
+
+  /* Scaling the Photo to fit the 2-column layout */
+  .player-photo {
+    width: 90%; /* Responsive width based on card size */
+    height: auto;
+    aspect-ratio: 1 / 1; /* Keeps it a perfect circle */
+    max-width: 120px; /* Prevents it from getting too huge */
+    border-width: 2px;
+  }
+
+  .player-name {
+    font-size: 14px !important; /* Smaller text to prevent overlapping */
+    margin-top: 8px;
+  }
+
+  /* Hero adjustments for smaller screens */
+  .hero h1 {
+    font-size: 2.2rem !important;
+  }
+  
+  /* Menu styling for mobile */
+  .site-menu {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
+  }
+}
