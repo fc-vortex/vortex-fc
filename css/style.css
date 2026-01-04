@@ -125,15 +125,44 @@ h1, h2, h3, h4, h5 {
 /* ============================= */
 /* 4. PLAYERS & CARDS */
 /* ============================= */
+/* ============================= */
+/* 4. PLAYERS & CARDS */
+/* ============================= */
 .players-section {
   padding: 80px 0;
   background-color: #020617;
 }
 
+/* Base Grid: 4 columns for desktop */
 .players-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr); 
   gap: 30px;
+}
+
+/* Tablet: 3 columns */
+@media (max-width: 992px) {
+  .players-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile: FORCE 2 columns per row */
+@media (max-width: 768px) {
+  .players-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px; /* Slightly smaller gap so they fit well */
+    padding: 0 10px;
+  }
+
+  .player-photo {
+    width: 100px !important; /* Shrink photos so two fit side-by-side */
+    height: 100px !important;
+  }
+
+  .player-name {
+    font-size: 1.1rem;
+  }
 }
 
 .player-card {
@@ -159,8 +188,27 @@ h1, h2, h3, h4, h5 {
   border-radius: 50%;
   border: 3px solid #007bff;
   margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
+/* Empty placeholder styling */
+.empty-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #444;
+}
+
+.plus-icon {
+    font-size: 40px;
+    color: #444;
+}
 /* ============================= */
 /* 5. COMPONENTS & BUTTONS */
 /* ============================= */
