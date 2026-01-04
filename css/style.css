@@ -152,20 +152,34 @@ a {
 
 }
 /* ============================= */
-/* NEW PLAYER SECTION — DARK + GRADIENT DESIGN */
+/* CUSTOM PLAYER SECTION — DARK + NEON VIBE */
 /* ============================= */
 
 .players-section {
   background: linear-gradient(180deg, #0b1120, #020617);
   padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.players-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 20px),
+                    repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 20px);
+  z-index: 0;
 }
 
 .players-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 24px;
+  z-index: 1;
+  position: relative;
 }
 
+/* Player Card */
 .player-card {
   background: linear-gradient(135deg, #111827, #020617);
   border-radius: 20px;
@@ -175,22 +189,42 @@ a {
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  z-index: 1;
 }
 
+/* Neon glow & gradient overlay */
 .player-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(255,60,0,0.2), transparent 70%);
+  background: linear-gradient(120deg, rgba(255, 60, 0, 0.2), transparent 70%);
   transform: rotate(-25deg);
   z-index: 0;
+  transition: all 0.5s ease;
 }
 
+.player-card::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  background: radial-gradient(circle at center, rgba(255, 60, 0, 0.15), transparent 60%);
+  filter: blur(20px);
+  z-index: 0;
+  opacity: 0.7;
+  transition: opacity 0.4s ease;
+}
+
+.player-card:hover::after {
+  opacity: 1;
+}
+
+/* Hover effect */
 .player-card:hover {
   transform: translateY(-8px) scale(1.05);
   box-shadow: 0 20px 40px rgba(255, 60, 0, 0.5);
 }
 
+/* Player photo */
 .player-photo-wrap {
   position: relative;
   z-index: 1;
@@ -207,9 +241,10 @@ a {
 
 .player-card:hover .player-photo {
   transform: scale(1.1) rotate(3deg);
-  box-shadow: 0 0 20px rgba(255, 92, 0, 0.7);
+  box-shadow: 0 0 25px rgba(255, 92, 0, 0.8);
 }
 
+/* Player name */
 .player-name {
   position: relative;
   z-index: 1;
@@ -218,11 +253,13 @@ a {
   color: #ffb347;
   margin-top: 12px;
   letter-spacing: 0.02em;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .player-card:hover .player-name {
-  color: #ffffff;
+  background: linear-gradient(45deg, #ff3c00, #ffb347);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Empty / Coming Soon Cards */
