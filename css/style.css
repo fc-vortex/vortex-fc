@@ -231,52 +231,38 @@ h1, h2, h3, h4, h5 {
   border: 1px dashed rgba(0, 123, 255, 0.3);
   text-align: center;
 }
-/* ============================= */
-/* 5. MOBILE OVERRIDES (2-COLUMN GRID) */
-/* ============================= */
+/* --- VORTEX FC MOBILE FIX (PASTE AT BOTTOM OF CSS FILE) --- */
 @media (max-width: 768px) {
-  /* Navbar Adjustment */
-  .site-navbar {
-    position: relative;
-    background: #020617;
-    padding: 10px 0;
-  }
-
-  /* 2-Column Player Grid */
-  .players-grid {
-    grid-template-columns: repeat(2, 1fr) !important; /* Forces 2 columns side-by-side */
-    gap: 12px !important; /* Reduced gap to save space */
-    padding: 0 10px;
-  }
-
-  .player-card {
-    padding: 15px 5px !important; /* Slimmer padding inside cards */
-    border-radius: 12px;
-  }
-
-  /* Scaling the Photo to fit the 2-column layout */
-  .player-photo {
-    width: 90%; /* Responsive width based on card size */
-    height: auto;
-    aspect-ratio: 1 / 1; /* Keeps it a perfect circle */
-    max-width: 120px; /* Prevents it from getting too huge */
-    border-width: 2px;
-  }
-
-  .player-name {
-    font-size: 14px !important; /* Smaller text to prevent overlapping */
-    margin-top: 8px;
-  }
-
-  /* Hero adjustments for smaller screens */
-  .hero h1 {
-    font-size: 2.2rem !important;
-  }
   
-  /* Menu styling for mobile */
-  .site-menu {
-    flex-direction: column;
-    gap: 10px;
-    padding: 15px 0;
+  /* 1. Force the 2-column layout */
+  .players-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Forces 2 columns */
+    gap: 12px !important; /* Space between cards */
+    padding: 0 15px !important; /* Padding on the edges of the screen */
+  }
+
+  /* 2. Make the cards look better with more space */
+  .player-card {
+    padding: 20px 10px !important;
+    min-height: 220px; /* Gives them a uniform height */
+  }
+
+  /* 3. Scale the photos so they aren't tiny */
+  .player-photo {
+    width: 100px !important; /* Larger photos */
+    height: 100px !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* 4. Fix font sizes for 2-column view */
+  .player-name {
+    font-size: 16px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .player-card span { /* This targets the position text like 'FORWARD' */
+    font-size: 10px !important;
+    letter-spacing: 1px;
   }
 }
