@@ -1,9 +1,11 @@
-/* --- VORTEX FC MASTER STYLESHEET --- */
+/* --- VORTEX FC MASTER STYLESHEET (CLEAN & UPGRADED) --- */
 
-/* Base */
+/* ============================= */
+/* BASE */
+/* ============================= */
 body {
   line-height: 1.7;
-  color: gray;
+  color: #9ca3af;
   font-weight: 300;
   background-color: #222831;
   font-size: 16px;
@@ -12,15 +14,17 @@ body {
 
 h1, h2, h3, h4, h5 {
   font-family: "Montserrat", sans-serif;
-  color: #fff;
+  color: #ffffff;
 }
 
 a {
-  transition: .3s all ease;
+  transition: 0.3s all ease;
   text-decoration: none;
 }
 
-/* --- NAVBAR & LOGO --- */
+/* ============================= */
+/* NAVBAR & LOGO */
+/* ============================= */
 .site-navbar {
   position: absolute;
   width: 100%;
@@ -29,14 +33,14 @@ a {
 }
 
 .site-logo img {
-  height: 60px; /* Adjust logo size here */
+  height: 60px;
   width: auto;
   display: block;
 }
 
 @media (max-width: 768px) {
   .site-logo img {
-    height: 45px; /* Smaller logo for Mobile */
+    height: 45px;
   }
 }
 
@@ -45,35 +49,53 @@ a {
   padding: 0;
 }
 
+.site-menu li {
+  display: block;
+  margin: 10px 0;
+}
+
 .site-menu a {
-  color: #fff;
+  color: #ffffff;
   text-transform: uppercase;
   font-size: 13px;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
 }
 
-/* --- HERO SECTION (The Background) --- */
+/* Shop Jersey Button */
+.shop-jersey-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #ff3c00;
+  color: #ffffff !important;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.shop-jersey-btn:hover {
+  background: #ff5722;
+  transform: translateY(-2px);
+}
+
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
 .hero {
-  /* This ensures the background image stays on size */
-  background-image: url('../images/bg_3.jpg'); 
-  background-size: cover !important;
-  background-position: center center !important;
+  background-image: url('../images/bg_3.jpg');
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  background-attachment: scroll; /* Better for mobile performance */
-  
   position: relative;
-  height: 80vh; /* PC Height */
-  min-height: 500px;
+  min-height: 80vh;
+  max-height: 90vh;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
-/* The dark shadow over the image to make text readable */
-.hero.overlay:before {
+.hero.overlay::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
@@ -89,21 +111,20 @@ a {
   text-transform: uppercase;
 }
 
-/* --- MOBILE AUTO-SHAPE --- */
 @media (max-width: 768px) {
   .hero {
-    height: 60vh; /* Auto-shrinks for Mobile */
-    min-height: 350px;
+    min-height: 65vh;
+    background-position: center top;
   }
+
   .hero h1 {
-    font-size: 2.5rem !important;
-  }
-  .site-menu {
-    display: none; /* Hides menu on mobile unless you have a burger menu */
+    font-size: 2.4rem;
   }
 }
 
-/* --- SECTIONS --- */
+/* ============================= */
+/* SECTIONS */
+/* ============================= */
 .site-section {
   padding: 60px 0;
 }
@@ -112,13 +133,6 @@ a {
   background: #1a1e25 !important;
 }
 
-.footer-section {
-  padding: 50px 0;
-  background: #111;
-  color: #777;
-  font-size: 14px;
-}
-/* Future Plan Section */
 .site-section.bg-light {
   background: #f8f9fa;
 }
@@ -126,71 +140,71 @@ a {
 .site-section h5 {
   font-weight: 700;
 }
+
 /* ============================= */
-/* HERO BACKGROUND SIZE FIX */
+/* FOOTER */
 /* ============================= */
-
-/* Desktop & large screens */
-.hero {
-  min-height: 80vh;              /* Not too tall */
-  max-height: 90vh;              /* Prevents oversizing */
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
+.footer-section {
+  padding: 50px 0;
+  background: #111;
+  color: #777;
+  font-size: 14px;
 }
 
-/* Large desktop screens (very wide monitors) */
-@media (min-width: 1400px) {
-  .hero {
-    min-height: 70vh;
-  }
+/* ============================= */
+/* PLAYERS SECTION (PRO LOOK) */
+/* ============================= */
+.players-section {
+  background: linear-gradient(180deg, #0b1120, #020617);
 }
 
-/* Mobile (already optimized) */
-@media (max-width: 768px) {
-  .hero {
-    min-height: 100vh;
-    background-image: none !important;
-    background-color: #0b1120;
-  }
-}
-/* Shop Jersey Button in Navbar */
-.shop-jersey-btn {
-  display: inline-block;
-  padding: 8px 18px;
-  background: linear-gradient(135deg, #1f2937, #0f172a);
-  color: #38bdf8 !important;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 12px;
-  transition: 0.3s;
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
 }
 
-.shop-jersey-btn:hover {
-  background: linear-gradient(135deg, #0f172a, #1e3a8a);
-  color: #ffffff !important;
-  transform: translateY(-2px);
-}
-/* Mobile navbar fix */
-.site-menu li {
-  display: block;
-  margin: 10px 0;
+.player-card {
+  background: linear-gradient(145deg, #111827, #020617);
+  border-radius: 16px;
+  padding: 18px 12px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.shop-jersey-btn {
-  background: #ff3c00;
-  color: #fff !important;
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-weight: 600;
+.player-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
 }
+
+.player-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ff3c00;
+  margin-bottom: 14px;
+}
+
+.player-name {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #e5e7eb;
+}
+
+/* Empty / Coming Soon Players */
 .player-card.empty {
-  opacity: 0.6;
+  opacity: 0.55;
+}
+
+.player-card.empty .player-photo {
+  border-style: dashed;
+  border-color: #555;
 }
 
 .player-card.empty .player-name {
-  color: #999;
+  color: #9ca3af;
   font-style: italic;
 }
