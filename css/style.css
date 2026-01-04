@@ -1,254 +1,535 @@
-/* --- VORTEX FC: ELITE MASTER STYLESHEET (PC & MOBILE) --- */
+/* --- VORTEX FC MASTER STYLESHEET (MOBILE-OPTIMIZED) --- */
 
-/* 1. GLOBAL VARIABLES & BASE */
-:root {
-  --primary-blue: #007bff;
-  --electric-blue: #00d4ff;
-  --dark-bg: #020617;
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
-}
+
+
+/* ============================= */
+
+/* 1. BASE & RESET */
+
+/* ============================= */
 
 body {
+
   line-height: 1.7;
+
   color: #9ca3af;
+
   font-weight: 300;
-  background-color: var(--dark-bg);
-  font-family: 'Montserrat', sans-serif;
+
+  background-color: #020617; /* Dark Pro Pitch Base */
+
+  font-size: 16px;
+
   margin: 0;
-  overflow-x: hidden;
+
+  overflow-x: hidden; /* Prevents horizontal scrolling on mobile */
+
 }
+
+
 
 h1, h2, h3, h4, h5 {
+
   font-family: "Montserrat", sans-serif;
+
   color: #ffffff;
+
 }
 
-/* 2. NAVIGATION (GLASS LOOK) */
+
+
+/* ============================= */
+
+/* 2. NAVBAR & NAVIGATION */
+
+/* ============================= */
+
 .site-navbar {
+
   position: absolute;
+
   width: 100%;
+
   z-index: 1000;
+
   padding: 20px 0;
-  transition: var(--transition);
+
+  transition: 0.3s all ease;
+
 }
+
+
 
 .site-logo img {
+
   height: 60px;
+
   width: auto;
+
   display: block;
-  filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.3));
+
 }
+
+
 
 .site-menu {
+
   list-style: none;
-  display: flex;
-  gap: 30px;
-  align-items: center;
+
   padding: 0;
+
   margin: 0;
+
+  display: flex; /* PC View: Horizontal */
+
+  gap: 30px;
+
+  align-items: center;
+
 }
+
+
 
 .site-menu a {
+
   color: #ffffff;
+
   text-transform: uppercase;
+
   font-size: 13px;
-  letter-spacing: 2px;
+
+  letter-spacing: 0.1em;
+
   font-weight: 700;
-  transition: var(--transition);
+
+  transition: 0.3s;
+
 }
+
+
 
 .site-menu a:hover {
-  color: var(--primary-blue);
+
+  color: #007bff;
+
 }
 
-/* 3. HERO SECTION (ULTRA-MODERN) */
-.hero {
-  background-image: linear-gradient(rgba(2, 6, 23, 0.6), rgba(2, 6, 23, 0.8)), url('../images/bg_3.jpg');
-  background-size: cover;
-  background-position: center;
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
 
-.hero h1 {
-  font-size: clamp(2.5rem, 8vw, 5.5rem); 
-  font-weight: 900;
-  text-transform: uppercase;
-  background: linear-gradient(to bottom, #ffffff 60%, #94a3b8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1;
-  letter-spacing: -2px;
-  text-shadow: 0 10px 30px rgba(0, 123, 255, 0.3);
-}
 
-/* 4. PLAYER SECTION & CARDS (GLASSMORPISM) */
-.players-section {
-  padding: 100px 0;
-  background-color: var(--dark-bg);
-  background-image: 
-    radial-gradient(circle at 50% 0%, rgba(0, 123, 255, 0.1), transparent 50%),
-    linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
-  background-size: 100% 100%, 50px 50px, 50px 50px;
-}
+/* Button Styling (PC & Mobile) */
 
-.players-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  padding: 0 20px;
-}
-
-.player-card {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(12px);
-  border-radius: 24px;
-  padding: 40px 20px;
-  text-align: center;
-  transition: var(--transition);
-  position: relative;
-}
-
-.player-card:hover {
-  border-color: var(--primary-blue);
-  transform: translateY(-12px);
-  box-shadow: 0 20px 40px rgba(0, 123, 255, 0.2);
-}
-
-.player-photo {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--primary-blue);
-  padding: 5px;
-  background: rgba(0, 123, 255, 0.05);
-  margin-bottom: 15px;
-  transition: var(--transition);
-}
-
-.player-card:hover .player-photo {
-  box-shadow: 0 0 25px rgba(0, 123, 255, 0.5);
-  transform: scale(1.05) rotate(3deg);
-}
-
-.player-name {
-  color: #ffffff;
-  font-size: 22px;
-  font-weight: 800;
-  margin-top: 10px;
-}
-
-.player-card span {
-  text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: var(--primary-blue);
-  font-weight: 700;
-}
-
-/* 5. BUTTONS */
 .shop-jersey-btn {
+
   display: inline-block;
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--electric-blue) 100%) !important;
-  padding: 12px 28px;
-  border-radius: 12px;
-  color: white !important;
-  font-weight: 800;
+
+  padding: 12px 24px;
+
+  background: linear-gradient(135deg, #007bff 0%, #00d4ff 100%) !important;
+
+  color: #ffffff !important;
+
+  font-weight: 700;
+
+  border-radius: 8px;
+
   text-transform: uppercase;
+
   letter-spacing: 1px;
-  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
-  transition: var(--transition);
+
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+
+  transition: 0.3s;
+
   border: none !important;
+
 }
+
+
 
 .shop-jersey-btn:hover {
+
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 12px 25px rgba(0, 123, 255, 0.5);
+
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6);
+
 }
 
-/* 6. UTILITIES (TICKER & MATCH) */
-.news-ticker { background: #000a1a; border-bottom: 2px solid var(--primary-blue); display: flex; height: 40px; overflow: hidden; align-items: center; }
-.ticker-title { background: var(--primary-blue); color: white; padding: 0 15px; font-weight: bold; font-size: 11px; z-index: 2; }
-.ticker-text { display: inline-block; white-space: nowrap; animation: ticker-slide 20s linear infinite; }
-@keyframes ticker-slide { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-/* 7. MOBILE RESPONSIVENESS (THE MAGIC) */
-@media (max-width: 992px) {
-  .site-navbar {
-    position: relative;
-    background: #010413;
-    padding: 15px 0;
-    border-bottom: 1px solid var(--glass-border);
-  }
 
-  .site-menu {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px 0;
-  }
-}
+/* ============================= */
 
-@media (max-width: 768px) {
-  /* Force 2 Columns on Mobile */
-  .players-grid {
-    grid-template-columns: repeat(2, 1fr) !important; 
-    gap: 12px !important;
-    padding: 0 15px !important;
-  }
+/* 3. HERO SECTION (ULTRA-MODERN) */
 
-  .player-card {
-    padding: 20px 10px !important;
-    border-radius: 18px;
-    min-height: auto;
-  }
-
-  .player-photo {
-    width: 100px !important;
-    height: 100px !important;
-  }
-
-  .player-name {
-    font-size: 16px !important;
-  }
-
-  .hero {
-    min-height: 60vh;
-    text-align: center;
-  }
-
-  .shop-jersey-btn {
-    width: 80%;
-    text-align: center;
-  }
-}
-/* --- BRIGHTNESS & VISIBILITY FIX --- */
+/* ============================= */
 
 .hero {
-  /* 0.8 is darker than 0.7 - adjust this number to change brightness */
-  background-image: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.8)), url('../images/bg_3.jpg');
+
+  background-image: url('../images/bg_3.jpg');
+
   background-size: cover;
+
   background-position: center;
+
+  position: relative;
+
   min-height: 85vh;
+
   display: flex;
+
   align-items: center;
-  justify-content: center;
+
 }
+
+
+
+.hero.overlay::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(2, 6, 23, 0.7); /* Darker overlay for better text contrast */
+
+  z-index: 1;
+
+}
+
+
+
+.hero .container {
+
+  position: relative;
+
+  z-index: 2;
+
+}
+
+
 
 .hero h1 {
-  /* Added a stronger shadow for maximum visibility */
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 123, 255, 0.4);
+
+  font-size: clamp(2.5rem, 8vw, 5rem); /* Dynamically scales text size */
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  background: linear-gradient(to bottom, #ffffff 50%, #94a3b8 100%);
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 10px 30px rgba(0, 123, 255, 0.3);
+
+  letter-spacing: -2px;
+
+  line-height: 1;
+
 }
 
+
+
+/* ============================= */
+
+/* 4. PLAYER SECTION (NEON PULSE) */
+
+/* ============================= */
+
+.players-section {
+
+  padding: 80px 0;
+
+  background-color: #020617;
+
+  background-image: 
+
+    radial-gradient(circle at 50% 0%, rgba(0, 123, 255, 0.15), transparent 50%),
+
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+
+}
+
+
+
+.players-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 30px;
+
+}
+
+
+
 .player-card {
-  /* Darkened the glass slightly so the player names stand out */
-  background: rgba(15, 23, 42, 0.9) !important; 
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
+
+  background: rgba(15, 23, 42, 0.8);
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 20px;
+
+  padding: 30px 15px;
+
+  text-align: center;
+
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+
+}
+
+
+
+.player-card:hover {
+
+  border-color: #007bff;
+
+  box-shadow: 0 0 30px rgba(0, 123, 255, 0.3);
+
+  transform: translateY(-10px);
+
+}
+
+
+
+.player-photo {
+
+  width: 160px;
+
+  height: 160px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 3px solid #007bff;
+
+  padding: 5px;
+
+  background: rgba(0, 123, 255, 0.1);
+
+  margin-bottom: 15px;
+
+}
+
+
+
+.player-name {
+
+  color: #ffffff;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+}
+
+
+
+/* ============================= */
+
+/* 5. MOBILE OVERRIDES (THE "MAGIC") */
+
+/* ============================= */
+
+@media (max-width: 992px) {
+
+  /* Fix Navbar Overlap */
+
+  .site-navbar {
+
+    position: relative;
+
+    background: #020617;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid rgba(0, 123, 255, 0.2);
+
+  }
+
+
+
+  .site-menu {
+
+    flex-direction: column; /* Stack menu items vertically */
+
+    text-align: center;
+
+    gap: 15px;
+
+    padding: 20px 0;
+
+  }
+
+
+
+  .site-logo img {
+
+    height: 45px;
+
+    margin: 0 auto; /* Center logo on mobile */
+
+  }
+
+
+
+  /* Hero Adjustments */
+
+  .hero {
+
+    min-height: 60vh;
+
+    text-align: center;
+
+  }
+
+
+
+  /* Grid Adjustments for Mobile */
+
+  .players-grid {
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Larger cards on small screens */
+
+    padding: 0 20px;
+
+  }
+
+
+
+  .player-photo {
+
+    width: 200px; /* Bigger photos for mobile visibility */
+
+    height: 200px;
+
+  }
+
+
+
+  /* Touch Optimization */
+
+  .shop-jersey-btn {
+
+    width: 100%; /* Full width buttons are easier to tap on mobile */
+
+    max-width: 300px;
+
+    padding: 18px;
+
+  }
+
+}
+
+
+
+/* ============================= */
+
+/* 6. UTILITIES (TICKER & MATCH) */
+
+/* ============================= */
+
+.news-ticker { background: #000a1a; border-bottom: 2px solid #007bff; display: flex; height: 40px; overflow: hidden; align-items: center; }
+
+.ticker-title { background: #007bff; color: white; padding: 0 15px; font-weight: bold; font-size: 11px; z-index: 2; }
+
+.ticker-text { display: inline-block; white-space: nowrap; animation: ticker-slide 20s linear infinite; }
+
+@keyframes ticker-slide { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+
+
+.featured-match {
+
+  background: rgba(255, 255, 255, 0.03);
+
+  border-radius: 20px;
+
+  padding: 40px;
+
+  border: 1px dashed rgba(0, 123, 255, 0.3);
+
+  text-align: center;
+
+}
+
+/* --- VORTEX FC MOBILE FIX (PASTE AT BOTTOM OF CSS FILE) --- */
+
+@media (max-width: 768px) {
+
+  
+
+  /* 1. Force the 2-column layout */
+
+  .players-grid {
+
+    display: grid !important;
+
+    grid-template-columns: repeat(2, 1fr) !important; /* Forces 2 columns */
+
+    gap: 12px !important; /* Space between cards */
+
+    padding: 0 15px !important; /* Padding on the edges of the screen */
+
+  }
+
+
+
+  /* 2. Make the cards look better with more space */
+
+  .player-card {
+
+    padding: 20px 10px !important;
+
+    min-height: 220px; /* Gives them a uniform height */
+
+  }
+
+
+
+  /* 3. Scale the photos so they aren't tiny */
+
+  .player-photo {
+
+    width: 100px !important; /* Larger photos */
+
+    height: 100px !important;
+
+    margin-bottom: 10px !important;
+
+  }
+
+
+
+  /* 4. Fix font sizes for 2-column view */
+
+  .player-name {
+
+    font-size: 16px !important;
+
+    margin-bottom: 5px !important;
+
+  }
+
+
+
+  .player-card span { /* This targets the position text like 'FORWARD' */
+
+    font-size: 10px !important;
+
+    letter-spacing: 1px;
+
+  }
+
 }
