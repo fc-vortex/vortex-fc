@@ -307,3 +307,52 @@ a {
     margin-top: 10px;
   }
 }
+/* ====================================================== */
+/* FINAL FIXES: MOBILE OVERLAP & BLUE THEME OVERRIDE      */
+/* ====================================================== */
+
+/* 1. THE MOBILE OVERLAP FIX */
+@media (max-width: 768px) {
+  .site-navbar {
+    position: relative !important;
+    background: #111827 !important;
+    padding: 15px 0 !important;
+  }
+  .hero {
+    min-height: auto !important;
+    padding: 80px 0 40px 0 !important;
+  }
+  .site-menu li {
+    margin: 10px 0;
+  }
+  .hero h1 {
+    font-size: 2.8rem !important;
+  }
+}
+
+/* 2. THE BLUE THEME (Replacing Orange/Gold) */
+.shop-jersey-btn, .btn-primary {
+  background: #007bff !important;
+  border-color: #007bff !important;
+  color: #ffffff !important;
+}
+
+.shop-jersey-btn:hover, .btn-primary:hover {
+  background: #0056b3 !important;
+}
+
+.player-name {
+  color: #ffffff !important;
+}
+
+.player-photo {
+  border-color: #007bff !important;
+}
+
+.player-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 123, 255, 0.4) !important;
+}
+
+.player-card::after {
+  background: radial-gradient(circle at center, rgba(0, 123, 255, 0.15), transparent 60%) !important;
+}
