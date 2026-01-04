@@ -448,29 +448,3 @@ a {
   color: #fff;
   text-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
 }
-/* FORCE NAVBAR VISIBILITY ON ALL PAGES */
-.site-navbar {
-    background: #000a1a !important; /* Forces a dark background so you can see it */
-    position: relative !important;
-    z-index: 9999 !important;
-    display: block !important;
-    border-bottom: 1px solid rgba(0, 123, 255, 0.2);
-}
-
-/* Make sure the links inside are white/visible */
-.site-menu a {
-    color: #ffffff !important;
-    opacity: 1 !important;
-    display: inline-block;
-}
-
-/* Ensure the Shop Button is a bright blue pill */
-.shop-jersey-btn {
-    background: #007bff !important;
-    color: #fff !important;
-    padding: 8px 20px !important;
-    border-radius: 50px !important;
-    font-weight: bold !important;
-    text-transform: uppercase;
-    display: inline-block !important;
-}
