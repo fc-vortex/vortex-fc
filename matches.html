@@ -6,78 +6,92 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&family=Playfair+Display:italic,wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
   <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* FIX: Top bar and global settings */
-    body, html { margin: 0; padding: 0; background: #000; color: #fff; }
+    /* 1. Global Reset - REMOVED BLUE LINE */
+    body, html {
+      margin: 0; padding: 0;
+      background-color: #000000 !important; /* Pure Black background */
+      color: #9ca3af;
+      font-family: "Montserrat", sans-serif;
+    }
 
-    /* FIX: Mobile Menu and Close Button */
+    /* Remove the blue border from the navbar */
+    .site-navbar {
+      background: #000000 !important;
+      border-bottom: none !important; /* This removes the blue line */
+      padding: 20px 0;
+    }
+
+    /* 2. Mobile Menu Fixes */
     #mobileMenu {
-      position: fixed; top: 0; right: -100%; width: 300px; height: 100%;
-      background: #000; z-index: 1100; transition: 0.3s ease; padding: 20px;
+      position: fixed; top: 0; right: -100%; width: 300px; height: 100vh;
+      background: #000000; z-index: 9999; transition: 0.4s ease;
+      padding: 80px 25px; border-left: 1px solid #333;
     }
     #mobileMenu.show { right: 0; }
-    #menu-close { position: absolute; top: 20px; left: 20px; font-size: 40px; text-decoration: none; }
-    .site-navigation { margin-top: 60px; }
-    #menu-toggle { z-index: 1000; position: relative; }
+    #menu-close { position: absolute; top: 20px; left: 20px; font-size: 45px; color: #fff; text-decoration: none; }
 
-    /* MATCH CARD CUSTOM STYLES */
+    /* 3. Match History Section */
+    .match-history-title {
+      font-family: 'Playfair Display', serif; /* Matching your screenshot's serif font */
+      font-size: 2.5rem;
+      color: white;
+      margin-top: 40px;
+      margin-bottom: 50px;
+    }
+
     .match-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(212, 175, 55, 0.2);
-      border-radius: 15px;
-      padding: 30px;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-      margin-bottom: 40px;
+      background: rgba(255, 255, 255, 0.03); /* Subtle dark grey card */
+      border: 1px solid #222;
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 30px;
+      transition: 0.3s;
     }
-    .match-card:hover {
-      transform: translateY(-5px);
-      border-color: #d4af37;
-      background: rgba(255, 255, 255, 0.08);
-    }
-    .team-vs-title {
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-size: 1.5rem;
-    }
+
+    /* Yellow Score Badge with Glow */
     .score-badge {
-      background: linear-gradient(45deg, #d4af37, #f1c40f);
-      color: black;
+      background: #f1c40f;
+      color: #000;
       font-weight: 900;
-      padding: 10px 25px;
+      padding: 10px 30px;
       border-radius: 50px;
       font-size: 1.8rem;
       display: inline-block;
-      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-      margin: 20px 0;
       font-family: 'Orbitron', sans-serif;
+      box-shadow: 0 0 20px rgba(241, 196, 15, 0.4); /* The glow in your image */
     }
-    .win-text { color: #28a745; font-weight: bold; font-size: 0.9rem; display: block; margin-top: 5px; }
-    .loss-text { color: #dc3545; font-weight: bold; font-size: 0.9rem; display: block; margin-top: 5px; }
-    .player-list { color: #aaa; font-style: italic; font-size: 0.95rem; }
-    .philosophy-quote {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      color: #d4af37;
-      margin-bottom: 15px;
-      display: block;
-    }
-    .badge-mission { letter-spacing: 5px; text-transform: uppercase; font-weight: bold; opacity: 0.7; }
+
+    .win-text { color: #2ecc71; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+    .loss-text { color: #e74c3c; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
     
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      .team-vs-title { font-size: 1.1rem; }
-      .score-badge { font-size: 1.4rem; padding: 5px 15px; }
+    /* Coming Soon Card */
+    .coming-soon-card {
+      border: 1px dashed #444;
+      background: transparent;
+      opacity: 0.6;
     }
+
+    .coming-soon-text {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 4px;
+      color: #555;
+      text-transform: uppercase;
+      padding: 40px;
+    }
+
+    /* Remove border from philosophy section too */
+    .border-top, .border-warning { border: none !important; }
   </style>
 </head>
 
 <body>
+
 <div class="site-wrap">
 
 <header class="site-navbar" role="banner">
@@ -86,17 +100,16 @@
       <a href="#" class="text-white" id="menu-toggle">
         <span class="icon-menu h3"></span>
       </a>
+
       <div id="mobileMenu">
-        <a href="#" class="text-white" id="menu-close">&times;</a>
+        <a href="#" id="menu-close">&times;</a>
         <nav class="site-navigation">
           <ul class="site-menu list-unstyled">
-            <li><a href="index.html">Home</a></li>
-            <li class="active"><a href="matches.html">Matches</a></li>
-            <li><a href="players.html">Players</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="club.html">Club</a></li>
-            <li><a href="single.html">Announcement</a></li>
+            <li><a href="index.html" class="text-white">Home</a></li>
+            <li class="active"><a href="matches.html" class="text-white">Matches</a></li>
+            <li><a href="players.html" class="text-white">Players</a></li>
+            <li><a href="contact.html" class="text-white">Contact</a></li>
+            <li><a href="news.html" class="text-white">News</a></li>
             <li><a href="jersey.html" class="shop-jersey-btn">Shop Jersey</a></li>
           </ul>
         </nav>
@@ -105,49 +118,75 @@
   </div>
 </header>
 
-<div class="site-section bg-black">
+<div class="container text-center">
+  <h1 class="match-history-title">Match History</h1>
+
+  <div class="match-card">
+    <div class="row align-items-center">
+      <div class="col-md-4">
+        <h3 class="text-white font-weight-bold" style="letter-spacing: 2px;">VORTEX FC</h3>
+        <span class="win-text">[ WINNER ]</span>
+        <p class="small text-muted mt-2">S. Chowdhury • Radio • Jarif • Enzai</p>
+      </div>
+      <div class="col-md-4">
+        <div class="score-badge">3 - 1</div>
+      </div>
+      <div class="col-md-4">
+        <h3 class="text-white-50" style="letter-spacing: 2px;">KOPEERS FC</h3>
+        <span class="loss-text">[ DEFEATED ]</span>
+        <p class="small text-muted mt-2">Outplayed with discipline and intensity</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="match-card">
+    <div class="row align-items-center">
+      <div class="col-md-4">
+        <h3 class="text-white font-weight-bold" style="letter-spacing: 2px;">VORTEX FC</h3>
+        <span class="win-text">[ WINNER ]</span>
+        <p class="small text-muted mt-2">S. Chowdhury • Radio • Jarif • Enzai</p>
+      </div>
+      <div class="col-md-4">
+        <div class="score-badge">2 - 0</div>
+      </div>
+      <div class="col-md-4">
+        <h3 class="text-white-50" style="letter-spacing: 2px;">THUNDER FC</h3>
+        <span class="loss-text">[ DEFEATED ]</span>
+        <p class="small text-muted mt-2">Controlled from start to finish</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="match-card coming-soon-card">
+    <div class="coming-soon-text">
+       Next Match <br> <span style="font-size: 2rem;">Coming Soon</span>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer-section py-5" style="background: #000;">
   <div class="container text-center">
-    <h2 class="text-white mb-5" style="font-family: 'Orbitron';">Match History</h2>
+    <p class="text-muted">© <script>document.write(new Date().getFullYear());</script> Vortex FC</p>
+  </div>
+</footer>
 
-    <div class="match-card">
-      <div class="row align-items-center">
-        <div class="col-md-4">
-          <h3 class="team-vs-title text-white">VORTEX FC</h3>
-          <span class="win-text">[ WINNER ]</span>
-          <ul class="list-unstyled player-list mt-3">
-            <li>S. Chowdhury • Radio • Jarif • Enzai</li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <div class="score-badge">3 - 1</div>
-        </div>
-        <div class="col-md-4">
-          <h3 class="team-vs-title text-white-50">Kopeers FC</h3>
-          <span class="loss-text">[ DEFEATED ]</span>
-          <p class="small text-muted mt-3">Outplayed with discipline and intensity</p>
-        </div>
-      </div>
-    </div>
+</div>
 
-    <div class="match-card">
-      <div class="row align-items-center">
-        <div class="col-md-4">
-          <h3 class="team-vs-title text-white">VORTEX FC</h3>
-          <span class="win-text">[ WINNER ]</span>
-          <ul class="list-unstyled player-list mt-3">
-            <li>S. Chowdhury • Radio • Jarif • Enzai</li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <div class="score-badge">2 - 0</div>
-        </div>
-        <div class="col-md-4">
-          <h3 class="team-vs-title text-white-50">Thunder FC</h3>
-          <span class="loss-text">[ DEFEATED ]</span>
-          <p class="small text-muted mt-3">Controlled from start to finish</p>
-        </div>
-      </div>
-    </div>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
-    <div class="match-card">
-      <div class="row align-items-center">
+<script>
+  $(document).ready(function() {
+    $('#menu-toggle').on('click', function(e) {
+      e.preventDefault();
+      $('#mobileMenu').addClass('show');
+    });
+    $('#menu-close').on('click', function() {
+      $('#mobileMenu').removeClass('show');
+    });
+  });
+</script>
+
+</body>
+</html>
