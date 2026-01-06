@@ -10,9 +10,45 @@
   <link rel="stylesheet" href="fonts/icomoon/style.css">
   <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Floating Music Toggle Style */
+    #music-control {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 9999;
+      background: #d4af37;
+      color: black;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      font-size: 20px;
+    }
+    #music-control:hover {
+      transform: scale(1.1);
+      background: #f1c40f;
+    }
+  </style>
 </head>
 
 <body>
+
+<audio id="bg-music" loop>
+  <source src="your-music-file.mp3" type="audio/mpeg">
+</audio>
+
+<button id="music-control" title="Toggle Music">
+  <span id="music-icon">🔇</span>
+</button>
+
 <div class="site-wrap">
 
 <header class="site-navbar" role="banner">
@@ -140,6 +176,7 @@
 
 <script>
   $(document).ready(function() {
+    // Menu Logic
     $('#menu-toggle').on('click', function(e) {
       e.preventDefault();
       $('#mobileMenu').addClass('show');
@@ -152,6 +189,32 @@
 
     $('.site-menu a').on('click', function() {
       $('#mobileMenu').removeClass('show');
+    });
+
+    // --- Background Music Logic ---
+    var audio = document.getElementById("bg-music");
+    var musicBtn = document.getElementById("music-control");
+    var musicIcon = document.getElementById("music-icon");
+
+    // Start music on first click anywhere on the site
+    document.addEventListener('click', function() {
+      if (audio.paused) {
+        audio.play().then(() => {
+            musicIcon.innerHTML = "🔊"; // Set to playing icon
+        }).catch(e => console.log("Playback failed:", e));
+      }
+    }, { once: true });
+
+    // Toggle logic for the button
+    musicBtn.addEventListener('click', function(e) {
+      e.stopPropagation(); // Prevents the document-wide click from firing
+      if (audio.paused) {
+        audio.play();
+        musicIcon.innerHTML = "🔊";
+      } else {
+        audio.pause();
+        musicIcon.innerHTML = "🔇";
+      }
     });
   });
 </script>
