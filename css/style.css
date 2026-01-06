@@ -211,3 +211,50 @@ h1, h2, h3, h4, h5 {
   height: 50px;
   cursor: pointer;
 }
+/* ============================= */
+/* FINAL MOBILE & CLICK FIXES    */
+/* ============================= */
+
+/* 1. Force Hero Buttons to be clickable (Fixes the "Disabled" look) */
+.hero .container {
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+.hero-buttons a, .btn {
+  position: relative !important;
+  z-index: 10 !important;
+  pointer-events: auto !important; /* Forces touch/click to work */
+  opacity: 1 !important;
+}
+
+/* 2. Lock the Hamburger icon to the top right (No scrolling) */
+#menu-toggle {
+  position: fixed !important;
+  top: 20px;
+  right: 20px;
+  z-index: 10000; /* Higher than everything else */
+  background: rgba(2, 6, 23, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* 3. Fix the Match History White Box on Phone */
+.match-card, .site-section {
+  background-color: #020617 !important;
+}
+
+.match-card {
+  background: #0f172a !important; /* Dark Navy for the box */
+  border: 1px solid rgba(0, 123, 255, 0.3) !important;
+  color: #ffffff !important;
+}
+
+/* 4. Fix Sidebar Red Text */
+.site-menu a {
+  color: #ffffff !important;
+}
+
+.site-menu a:hover {
+  color: #007bff !important;
+}
