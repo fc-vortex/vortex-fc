@@ -1,153 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Vortex FC — Matches</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Playfair+Display:italic,wght@700&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
+<style>
+  .match-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    margin-bottom: 40px;
+  }
+  .match-card:hover {
+    transform: translateY(-5px);
+    border-color: #d4af37;
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .team-vs-title {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+  .score-badge {
+    background: linear-gradient(45deg, #d4af37, #f1c40f);
+    color: black;
+    font-weight: 900;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-size: 1.8rem;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    margin: 20px 0;
+    font-family: 'Orbitron', sans-serif;
+  }
+  .win-text {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 5px;
+  }
+  .loss-text {
+    color: #dc3545;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 5px;
+  }
+  .player-list {
+    color: #aaa;
+    font-style: italic;
+    font-size: 0.95rem;
+  }
+  .philosophy-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #d4af37;
+    margin-bottom: 15px;
+    display: block;
+  }
+  .badge-mission {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0.7;
+  }
+</style>
 
-<body>
-
-<div class="site-wrap">
-<header class="site-navbar py-4" role="banner">
-  <div class="container">
-    <div class="d-flex align-items-center justify-content-end">
-      
-      <a href="#" class="text-white" id="menu-toggle">
-        <span class="icon-menu h3"></span>
-      </a>
-
-      <div class="navbar-collapse" id="mobileMenu">
-        <a href="#" class="text-white" id="menu-close" style="text-decoration: none; font-size: 40px;">&times;</a>
-        
-        <nav class="site-navigation">
-          <ul class="site-menu list-unstyled">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="matches.html">Matches</a></li>
-            <li><a href="players.html">Players</a></li>
-            <li><a href="blog.html">Club</a></li> <li><a href="single.html">News</a></li> <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-
-    </div>
-  </div>
-</header>
-<!-- HERO -->
-<div class="hero overlay" style="background-image: url('images/bg_3.jpg'); padding:120px 0;">
-  <div class="container text-center text-white">
-    <h1>VORTEX FC MATCH HISTORY</h1>
-    <p>“Every match is a statement. Every win is earned.”</p>
-  </div>
-</div>
-
-<!-- MATCHES -->
-<div class="site-section">
-  <div class="container">
-
-    <!-- MATCH 1 -->
-    <div class="d-flex team-vs mb-5">
-      <span class="score">3 - 1</span>
-      <div class="team-1 w-50 text-center">
-        <h3>VORTEX FC <span>(WIN)</span></h3>
-        <ul class="list-unstyled">
-          <li>S. Chowdhury</li>
-          <li>Radio</li>
-          <li>Jarif</li>
-          <li>Enzai</li>
-        </ul>
-      </div>
-      <div class="team-2 w-50 text-center">
-        <h3>Kopeers FC <span>(LOSS)</span></h3>
-        <p>Outplayed with discipline and intensity</p>
-      </div>
-    </div>
-
-    <!-- MATCH 2 -->
-    <div class="d-flex team-vs mb-5">
-      <span class="score">2 - 0</span>
-      <div class="team-1 w-50 text-center">
-        <h3>VORTEX FC <span>(WIN)</span></h3>
-        <ul class="list-unstyled">
-          <li>S. Chowdhury</li>
-          <li>Radio</li>
-          <li>Jarif</li>
-          <li>Enzai</li>
-        </ul>
-      </div>
-      <div class="team-2 w-50 text-center">
-        <h3>Thunder FC <span>(LOSS)</span></h3>
-        <p>Controlled from start to finish</p>
-      </div>
-    </div>
-
-    <!-- MATCH 3 -->
-    <div class="d-flex team-vs">
-      <span class="score">4 - 2</span>
-      <div class="team-1 w-50 text-center">
-        <h3>VORTEX FC <span>(WIN)</span></h3>
-        <ul class="list-unstyled">
-          <li>S. Chowdhury</li>
-          <li>Radio</li>
-          <li>Jarif</li>
-          <li>Enzai</li>
-        </ul>
-      </div>
-      <div class="team-2 w-50 text-center">
-        <h3>Blaze FC <span>(LOSS)</span></h3>
-        <p>High-pressure football delivered results</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- MOTIVATION -->
-<div class="site-section bg-dark text-white">
+<div class="site-section bg-black">
   <div class="container text-center">
-    <h2>Our Match Philosophy</h2>
-    <p>“We don’t fear opponents. We trust our preparation.”</p>
-    <p>“Victory is built in training.”</p>
-    <p>“One badge. One mission.”</p>
+    <h2 class="text-white mb-5" style="font-family: 'Orbitron';">Match History</h2>
+
+    <div class="match-card">
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <h3 class="team-vs-title text-white">VORTEX FC</h3>
+          <span class="win-text">[ WINNER ]</span>
+          <ul class="list-unstyled player-list mt-3">
+            <li>S. Chowdhury • Radio • Jarif • Enzai</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <div class="score-badge">3 - 1</div>
+        </div>
+        <div class="col-md-4">
+          <h3 class="team-vs-title text-white-50">Kopeers FC</h3>
+          <span class="loss-text">[ DEFEATED ]</span>
+          <p class="small text-muted mt-3">Outplayed with discipline and intensity</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="match-card">
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <h3 class="team-vs-title text-white">VORTEX FC</h3>
+          <span class="win-text">[ WINNER ]</span>
+          <ul class="list-unstyled player-list mt-3">
+            <li>S. Chowdhury • Radio • Jarif • Enzai</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <div class="score-badge">2 - 0</div>
+        </div>
+        <div class="col-md-4">
+          <h3 class="team-vs-title text-white-50">Thunder FC</h3>
+          <span class="loss-text">[ DEFEATED ]</span>
+          <p class="small text-muted mt-3">Controlled from start to finish</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="match-card">
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <h3 class="team-vs-title text-white">VORTEX FC</h3>
+          <span class="win-text">[ WINNER ]</span>
+          <ul class="list-unstyled player-list mt-3">
+            <li>S. Chowdhury • Radio • Jarif • Enzai</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <div class="score-badge">4 - 2</div>
+        </div>
+        <div class="col-md-4">
+          <h3 class="team-vs-title text-white-50">Blaze FC</h3>
+          <span class="loss-text">[ DEFEATED ]</span>
+          <p class="small text-muted mt-3">High-pressure football delivered results</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<!-- FOOTER -->
-<footer class="footer-section bg-dark text-white">
+<div class="site-section bg-dark text-white border-top border-warning">
   <div class="container text-center py-5">
-    <p>© Vortex FC — Strength. Unity. Victory.</p>
-    <p style="font-size:12px;">
-      Template by <a href="https://colorlib.com" target="_blank" style="color:#aaa;">Colorlib</a>
-    </p>
+    <h2 class="mb-5" style="font-family: 'Orbitron'; color: #d4af37;">Our Match Philosophy</h2>
+    <div class="mb-4">
+      <span class="philosophy-quote">“We don’t fear opponents. We trust our preparation.”</span>
+      <span class="philosophy-quote">“Victory is built in training.”</span>
+    </div>
+    <p class="badge-mission text-warning">One badge. One mission.</p>
   </div>
-</footer>
-
 </div>
-
-<script src="js/bootstrap.min.js"></script>
-  <script>
-  $(document).ready(function() {
-    // Open the Menu
-    $('#menu-toggle').on('click', function(e) {
-      e.preventDefault();
-      $('#mobileMenu').addClass('show');
-    });
-
-    // Close the Menu
-    $('#menu-close').on('click', function(e) {
-      e.preventDefault();
-      $('#mobileMenu').removeClass('show');
-    });
-
-    // Close menu automatically when a link is clicked
-    $('.site-menu a').on('click', function() {
-      $('#mobileMenu').removeClass('show');
-    });
-  });
-</script>
-</body>
-</html>
