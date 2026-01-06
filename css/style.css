@@ -1,214 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Vortex FC — Official Website</title>
-  <link rel="icon" type="image/png" href="vortex-logo.png">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+/* --- VORTEX FC GLOBAL NAVY THEME --- */
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
-  <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
-  <link rel="stylesheet" href="css/style.css">
+/* 1. Global Reset - Kills the blue/gold lines everywhere */
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #020617 !important; 
+    color: #9ca3af;
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
 
-  <style>
-    /* 1. Global Reset & Black Bar Fix */
-    body, html {
-      margin: 0;
-      padding: 0;
-      background-color: #020617;
-      color: #9ca3af;
-      font-family: "Montserrat", sans-serif;
-      overflow-x: hidden;
-    }
+/* Removes lines from Navbar, Footer, and Sections */
+.site-navbar, 
+.footer-section, 
+.site-section, 
+.border-top, 
+.border-bottom,
+.site-footer {
+    border: none !important;
+}
 
-    /* 2. Fixed Navbar & Gold Accents */
-    .site-navbar {
-      background: rgba(2, 6, 23, 0.95);
-      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-      padding: 15px 0;
-    }
+/* 2. Navbar & Mobile Menu */
+.site-navbar {
+    background: rgba(2, 6, 23, 0.95) !important;
+}
 
-    /* 3. Mobile Menu Fixes */
-    #mobileMenu {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 300px;
-      height: 100vh;
-      background: #020617;
-      z-index: 9999;
-      transition: 0.4s ease;
-      padding: 80px 25px;
-      border-left: 2px solid #d4af37;
-    }
-    #mobileMenu.show { right: 0; }
+#mobileMenu {
+    background: #020617 !important;
+    border-left: 2px solid #007bff !important; 
+}
 
-    #menu-close {
-      position: absolute;
-      top: 20px;
-      left: 20px; /* Moved to left to avoid thumb overlap with hamburger */
-      font-size: 45px;
-      color: #d4af37;
-      text-decoration: none;
-      line-height: 1;
-    }
+#menu-close {
+    color: #ffffff !important;
+}
 
-    .site-menu a {
-      color: #fff !important;
-      font-size: 20px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      display: block;
-      text-decoration: none;
-    }
-    .site-menu a:hover { color: #d4af37 !important; }
+.site-menu a:hover {
+    color: #007bff !important;
+}
 
-    /* 4. Hero Section Button Fix */
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-    }
-    .hero .container {
-      position: relative;
-      z-index: 10;
-    }
-    .hero-buttons a {
-      pointer-events: auto !important;
-      position: relative;
-      z-index: 20;
-    }
+/* 3. Buttons & Badges (Replacing Gold with Blue) */
+.btn-primary, 
+.score-badge, 
+#scrollToTop, 
+.shop-jersey-btn {
+    background: #007bff !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+}
 
-    /* 5. Gold Components */
-    .btn-primary, .shop-jersey-btn {
-      background: linear-gradient(45deg, #d4af37, #f1c40f) !important;
-      border: none !important;
-      color: #000 !important;
-      font-weight: 900 !important;
-      text-transform: uppercase;
-    }
+.text-primary {
+    color: #007bff !important;
+}
 
-    .text-primary { color: #d4af37 !important; }
-    
-    /* 6. Footer Styles */
-    .footer-section {
-      background: #020617;
-      border-top: 1px solid rgba(212, 175, 55, 0.2);
-      padding: 60px 0 30px 0;
-    }
-  </style>
-</head>
-
-<body>
-
-<div class="site-wrap">
-
-  <header class="site-navbar" role="banner">
-    <div class="container">
-      <div class="d-flex align-items-center justify-content-end">
-        <a href="#" class="text-white" id="menu-toggle">
-          <span class="icon-menu h3"></span>
-        </a>
-
-        <div id="mobileMenu">
-          <a href="#" id="menu-close">&times;</a>
-          <nav class="site-navigation">
-            <ul class="site-menu list-unstyled">
-              <li class="active"><a href="index.html">Home</a></li>
-              <li><a href="matches.html">Matches</a></li>
-              <li><a href="players.html">Players</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="news.html">News</a></li>
-              <li><a href="jersey.html" class="shop-jersey-btn">Shop Jersey</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <div class="hero overlay">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 ml-auto text-white text-lg-right text-center">
-          <h1 class="mb-3" style="font-family: 'Orbitron'; font-weight: 900;">VORTEX FC</h1>
-          <p class="lead">Strength through unity. <br>Relentless on the pitch. Fearless as one.</p>
-          
-          <div class="mt-4 d-flex flex-wrap justify-content-lg-end justify-content-center hero-buttons">
-            <a href="players.html" class="btn btn-outline-white py-3 px-4 mb-2 mr-lg-3 text-white border-white">Meet the Squad</a>
-            <a href="matches.html" class="btn btn-primary py-3 px-4 mb-2">View Matches</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="site-section bg-dark">
-    <div class="container text-center">
-      <h2 class="mb-4" style="color: #d4af37; font-family: 'Orbitron';">Latest Match</h2>
-      <p class="text-white"><strong>Vortex FC vs Kopeers FC</strong></p>
-      <div class="h1 font-weight-bold text-primary mb-3" style="font-family: 'Orbitron'; font-size: 4rem;">13 - 9</div>
-      <p>Man of the Match: <strong class="text-white">Enzai</strong></p>
-    </div>
-  </div>
-
-  <div class="site-section">
-    <div class="container text-center">
-      <h2 class="mb-4" style="font-family: 'Orbitron';">Who We Are</h2>
-      <p>Vortex FC is a competitive football club built on discipline, passion, and brotherhood. Every match is played with pride. Every player represents the badge.</p>
-    </div>
-  </div>
-
-  <footer class="footer-section">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-12 mb-4">
-          <h2 style="font-family: 'Orbitron'; color: #d4af37; letter-spacing: 3px;">VORTEX FC</h2>
-          <p class="text-muted">Strength through Unity. Built with pride and purpose.</p>
-        </div>
-        <div class="col-12">
-          <p class="mb-0" style="font-size: 0.85rem;">
-            &copy; <script>document.write(new Date().getFullYear());</script> Vortex FC.
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <button id="scrollToTop" style="position: fixed; bottom: 25px; right: 25px; z-index: 999; background: #d4af37; color: #000; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; display: none;">↑</button>
-
-</div>
-
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-<script>
-  $(document).ready(function() {
-    // Mobile Menu
-    $('#menu-toggle').on('click', function(e) {
-      e.preventDefault();
-      $('#mobileMenu').addClass('show');
-    });
-
-    $('#menu-close, .site-menu a').on('click', function() {
-      $('#mobileMenu').removeClass('show');
-    });
-
-    // Scroll to Top
-    $(window).scroll(function() {
-      if ($(this).scrollTop() > 300) { $('#scrollToTop').fadeIn(); } 
-      else { $('#scrollToTop').fadeOut(); }
-    });
-
-    $('#scrollToTop').click(function() {
-      $('html, body').animate({scrollTop: 0}, 600);
-      return false;
-    });
-  });
-</script>
-
-</body>
-</html>
+.btn-outline-white {
+    border: 2px solid #ffffff !important;
+    color: #ffffff !important;
+    background: transparent;
+}
